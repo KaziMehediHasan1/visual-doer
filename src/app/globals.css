@@ -1,9 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* CUSTOME ADDED */
+  /* FONTS */
+  --font-sora: "Sora", sans-serif;
+  /* ----- COLORS ----- */
+  --color-GradientOneOfOne: var(--color-GradientOneOfOne);
+  --color-GradientOneOfTwo: var(--color-GradientOneOfTwo);
+  --color-GradientTwoOfTwo: var(--color-GradientTwoOfTwo);
+  --color-GradientTwoOfOne: var(--color-GradientTwoOfOne);
+  --color-primary: var(--color-primary);
+  --color-Secondary: var(--color-Secondary);
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+  /* BUILT - IN */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -44,6 +66,24 @@
 }
 
 :root {
+  /* CUSTOME COLORS */
+  --color-GradientOneOfOne: #00d1ae;
+  --color-GradientOneOfTwo: #e6faf7;
+  --color-GradientTwoOfTwo: #707070;
+  --color-GradientTwoOfOne: #ffffff;
+  --color-primary: #00d1ae;
+  --color-Secondary: #002820;
+  --color-primary-50: #e6faf7;
+  --color-primary-100: #b0f1e6;
+  --color-primary-200: #8aeada;
+  --color-primary-300: #54e0c9;
+  --color-primary-400: #33dabe;
+  --color-primary-500: #00d1ae;
+  --color-primary-600: #00be9e;
+  --color-primary-700: #00947c;
+  --color-primary-800: #007360;
+  --color-primary-900: #005849;
+  /* BUILT-IN */
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -118,5 +158,6 @@
   }
   body {
     @apply bg-background text-foreground;
+    @apply font-sora;
   }
 }

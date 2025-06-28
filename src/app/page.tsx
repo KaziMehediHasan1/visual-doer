@@ -6,7 +6,7 @@ import React from "react";
 const Home = () => {
   return (
     <div>
-      Home
+     <p className="text-5xl bg-black font- text-primary-400 font-sora "> visual</p>
       <Button size="lg" variant="outline">
         Mehedi
       </Button>
