@@ -6,6 +6,9 @@
 
 @theme inline {
   /* CUSTOME ADDED */
+  --radius-primaryRound: var(--radius-primaryRound);
+  --radius-cardRound: var(--radius-cardRound);
+  --radius-smcardRound: var(--radius-smcardRound);
   /* FONTS */
   --font-sora: "Sora", sans-serif;
   /* ----- COLORS ----- */
@@ -66,6 +69,10 @@
 }
 
 :root {
+  /* OTHERS */
+  --radius-primaryRound: 99px;
+  --radius-cardRound: 40px;
+  --radius-smcardRound: 32px;
   /* CUSTOME COLORS */
   --color-GradientOneOfOne: #00d1ae;
   --color-GradientOneOfTwo: #e6faf7;
