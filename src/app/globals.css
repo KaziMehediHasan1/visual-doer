@@ -12,6 +12,7 @@
   /* FONTS */
   --font-sora: "Sora", sans-serif;
   /* ----- COLORS ----- */
+  --color-primaryBG: var(--color-primaryBG);
   --color-GradientOneOfOne: var(--color-GradientOneOfOne);
   --color-GradientOneOfTwo: var(--color-GradientOneOfTwo);
   --color-GradientTwoOfTwo: var(--color-GradientTwoOfTwo);
@@ -90,6 +91,7 @@
   --color-primary-700: #00947c;
   --color-primary-800: #007360;
   --color-primary-900: #005849;
+  --color-primaryBG: #040404;
   /* BUILT-IN */
   --radius: 0.625rem;
   --background: oklch(1 0 0);

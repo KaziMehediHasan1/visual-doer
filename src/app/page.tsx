@@ -1,30 +1,17 @@
-import DubbleQutes from "@/assets/Logo/DubbleQutes";
-import Gurranty from "@/assets/Logo/Gurranty";
-import PrimaryLogo from "@/assets/Logo/PrimaryLogo";
-import Star from "@/assets/Logo/Star";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+"use client";
+import CommonWrapper from "@/components/shared/CommonWrapper";
 import React from "react";
+import Navbar from "@/components/shared/Navbar";
+import Hero from "@/components/portfolio/Hero";
 
 const Home = () => {
   return (
     <div>
-      <p className="text-5xl bg-black font- text-primary-400 font-sora ">
-        {" "}
-        visual
-      </p>
-      <Button
-        size="lg"
-        variant="outline"
-        className="rounded-cardRound"
-      >
-        Mehedi
-      </Button>
-      <Input type="text" placeholder="likho" />
-      <PrimaryLogo />
-      <Gurranty />
-      <DubbleQutes />
-      <Star />
+      {" "}
+      <CommonWrapper>
+        <Navbar />
+      </CommonWrapper>
+      <Hero />
     </div>
   );
 };
