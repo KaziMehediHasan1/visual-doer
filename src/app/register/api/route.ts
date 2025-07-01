@@ -3,10 +3,10 @@ import { dbConnect } from "@/lib/mongodb";
 import User from "@/models/user.model";
 
 
-export async function GET(req: Request) {
+export async function POST(req: Request) {
   try {
     await dbConnect();
-    const { id } = await req.json();
+    const {  } = await req.json();
     if (id) {
       const response = await User.findById({ _id: id });
       return ApiResponse({
