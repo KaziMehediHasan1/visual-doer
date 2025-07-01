@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="relative z-10 flex items-center justify-between">
         <PrimaryLogo />
         {/* FOR DESKTOP DEVICE ONLY */}
-        <div className="lg:flex items-center gap-7 hidden ">
+        <div className="lg:flex items-center space-x-7 hidden ">
           <Link to="about" duration={500} smooth={true} className="text-white">
             about
           </Link>
