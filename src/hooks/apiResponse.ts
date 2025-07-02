@@ -5,6 +5,7 @@ export interface IApiResponse<T> {
   message: string;
   data?: T;
   success: boolean;
+  token?: string;
 }
 
 export const ApiResponse = <T>(data: IApiResponse<T>) => {
@@ -14,6 +15,7 @@ export const ApiResponse = <T>(data: IApiResponse<T>) => {
       message: data.message,
       data: data.data ?? null,
       status: data.status,
+      token: data?.token,
     },
     { status: data.status }
   );

@@ -1,28 +1,23 @@
 import { ApiResponse } from "@/hooks/apiResponse";
 import { dbConnect } from "@/lib/mongodb";
 import User from "@/models/user.model";
-
+import bcrypt from "bcrypt";
 
 export async function POST(req: Request) {
   try {
     await dbConnect();
-    const {  } = await req.json();
-    if (id) {
-      const response = await User.findById({ _id: id });
+    const { name, email, password } = await req.json();
+    const hash = await bcrypt.hash(password, 10);
+    const result = new User({ name, email, password: hash });
+    await result.save();
+    if (result) {
       return ApiResponse({
         status: 201,
-        message: "login successfull",
+        message: "Register Successfully",
         success: true,
-        data: response?.data,
+        data: result,
       });
     }
-
-    return ApiResponse({
-      status: 201,
-      message: "Login Successfull",
-      success: true,
-      data: {},
-    });
   } catch (error) {
     return ApiResponse({
       status: 404,
