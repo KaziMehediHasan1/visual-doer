@@ -59,7 +59,7 @@ export async function DELETE(req: Request) {
       return ApiResponse({
         status: 201,
         success: true,
-        message: "Get all Projects",
+        message: "Deleted Successfull",
         data: result,
       });
     }
