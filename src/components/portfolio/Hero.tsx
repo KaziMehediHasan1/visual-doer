@@ -4,6 +4,7 @@ import Star from "@/assets/Logo/Star";
 import CommonWrapper from "../shared/CommonWrapper";
 import Gurranty from "@/assets/Logo/Gurranty";
 import PrimaryButton from "../reuse/PrimaryButton";
+import CommonTitle from "../reuse/CommonTitle";
 const Hero = () => {
   return (
     <div className="w-full mt-10 sm:mt-[60px] ">
@@ -12,7 +13,7 @@ const Hero = () => {
         <h1 className="text-[38px] sm:text-[50px] lg:text-[80px] leading-[120%] font-semibold text-center bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent">
           build the brand <br /> with visual doer agency
         </h1>
-        <p className="text-center md:text-[18px] sm:text-[13px] text-xs sm:max-w-[70%] mx-auto bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent ">
+        <p className="text-center md:text-[18px] sm:text-[13px] text-xs sm:max-w-[70%] mx-auto bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent leading-[140%]">
           {" "}
           Empowering businesses with cutting-edge AI technology. Transforming
           ideas into intelligent, scalable solutions.
@@ -20,7 +21,7 @@ const Hero = () => {
       </section>
       {/* REVIEW CARD */}
       <div
-        className="w-full absolute z-0 bg-no-repeat bg-center bg-contain min-h-[360px] 
+        className="w-full bg-no-repeat bg-center bg-contain min-h-[360px] 
         sm:min-h-[600px] 
         md:min-h-[700px] 
         lg:min-h-[800px] 
@@ -32,7 +33,7 @@ const Hero = () => {
         }}
       >
         <CommonWrapper>
-          <div className="relative max-w-fit mx-auto space-y-8 lg:space-y-12 mt-10 sm:mt-16 md:mt-20 xl:mt-28">
+          <div className="max-w-fit mx-auto space-y-8 lg:space-y-12 pt-12 lg:pt-28">
             <div className="rounded-[20px] p-4 sm:px-6 sm:py-5 bg-primary-800/70 backdrop-blur-[25px] w-fit mx-auto text-white text-center space-y-3">
               {/* Rating Block */}
               <div className="flex items-center gap-3 justify-center">
@@ -66,14 +67,27 @@ const Hero = () => {
             </div>
           </div>
 
-          <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent leading-[140%] text-[18px] sm:text-[24px] lg:text-[26px] font-semibold text-center max-w-[80%] mx-auto mt-10 md:mt-[140px]">
+          <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent leading-[140%] text-[18px] sm:text-[24px] lg:text-[26px] font-semibold text-center max-w-[80%] mx-auto mt-10 md:mt-[160px]">
             Visual Doar transforms your ideas into effective digital design and
             innovative development, combining creativity and technology to craft
             user-centric solutions that bring your vision to life with engaging
             and functional experiences.
           </p>
+
+          {/* brand section */}
+          <section className="mt-10 lg:mt-28 2xl:mt-[160px]">
+            <CommonTitle
+              text="we must provide
+              with your brand"
+            />
+
+          <div className="text-white">
+            
+          </div>
+          </section>
         </CommonWrapper>
       </div>
+      
     </div>
   );
 };
