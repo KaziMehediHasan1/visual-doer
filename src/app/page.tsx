@@ -3,6 +3,7 @@ import CommonWrapper from "@/components/shared/CommonWrapper";
 import React from "react";
 import Navbar from "@/components/shared/Navbar";
 import Hero from "@/components/portfolio/Hero";
+import Brand from "@/components/portfolio/Brand";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
         <Navbar />
       </CommonWrapper>
       <Hero />
+      <Brand />
     </div>
   );
 };

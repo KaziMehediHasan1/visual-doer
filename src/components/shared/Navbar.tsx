@@ -1,7 +1,7 @@
 import Background from "@/assets/images/noiseeffect.png";
 import PrimaryLogo from "@/assets/Logo/PrimaryLogo";
 import { Link } from "react-scroll";
-import PrimaryButton from "../reuse/PrimaryButton";
+import PrimaryButton from "../reuse/NavButton";
 import ToggleBar from "@/assets/icons/ToggleBar";
 
 const Navbar = () => {
