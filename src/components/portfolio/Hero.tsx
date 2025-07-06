@@ -73,21 +73,8 @@ const Hero = () => {
             user-centric solutions that bring your vision to life with engaging
             and functional experiences.
           </p>
-
-          {/* brand section */}
-          <section className="mt-10 lg:mt-28 2xl:mt-[160px]">
-            <CommonTitle
-              text="we must provide
-              with your brand"
-            />
-
-          <div className="text-white">
-            
-          </div>
-          </section>
         </CommonWrapper>
       </div>
-      
     </div>
   );
 };

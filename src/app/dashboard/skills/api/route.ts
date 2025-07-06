@@ -29,10 +29,14 @@ export async function POST(req: Request) {
 }
 
 // GET FUNCTION
-export async function GET() {
+export async function GET(req: Request) {
   try {
+    const { searchParams } = new URL(req.url);
+    const limit = parseInt(searchParams.get("limit") || "3");
+    const lastid = searchParams.get("lastid");
+    const query = lastid ? { _id: { $lt: lastid } } : {};
     await dbConnect();
-    const result = await Skill.find();
+    const result = await Skill.find(query).sort({ _id: -1 }).limit(limit);
     if (result) {
       return ApiResponse({
         status: 201,
