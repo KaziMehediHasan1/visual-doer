@@ -1,17 +1,13 @@
-import { Metadata } from "next";
-
 type BlogDetailProps = {
   params: {
     id: string;
   };
 };
 
-
-
-export default async function BlogDetails({ params }: BlogDetailProps) {
+const BlogDetails = async ({ params }: BlogDetailProps) => {
   const id = params.id;
 
-  console.log("Blog ID:", id); // will show in terminal (not browser)
+  console.log("Blog ID:", id);
 
   return (
     <div className="p-6 text-white">
@@ -19,4 +15,5 @@ export default async function BlogDetails({ params }: BlogDetailProps) {
       <p>This is the detail page for blog ID: {id}</p>
     </div>
   );
-}
+};
+export default BlogDetails;
