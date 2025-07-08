@@ -13,7 +13,6 @@ const Navbar = () => {
           className="absolute inset-0 bg-no-repeat bg-cover opacity-30 rounded-primaryRound"
           style={{ backgroundImage: `url(${Background.src})` }}
         />
-
         <div className="relative z-10 flex items-center justify-between">
           <PrimaryLogo />
           {/* FOR DESKTOP DEVICE ONLY */}
