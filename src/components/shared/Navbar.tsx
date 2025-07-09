@@ -8,7 +8,7 @@ import CommonWrapper from "./CommonWrapper";
 const Navbar = () => {
   return (
     <CommonWrapper>
-      <div className="relative w-full md:mt-12 sm:mt-10 mt-8 p-4 sm:py-5 sm:px-7">
+      <div className="relative w-full lg:mt-12 sm:mt-10 mt-8 p-4 sm:py-5 sm:px-7">
         <div
           className="absolute inset-0 bg-no-repeat bg-cover opacity-30 rounded-primaryRound"
           style={{ backgroundImage: `url(${Background.src})` }}
@@ -16,7 +16,7 @@ const Navbar = () => {
         <div className="relative z-10 flex items-center justify-between">
           <PrimaryLogo />
           {/* FOR DESKTOP DEVICE ONLY */}
-          <div className="lg:flex items-center space-x-7 hidden">
+          <div className="hidden lg:flex items-center space-x-7 ">
             <Link
               to="about"
               duration={500}
