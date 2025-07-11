@@ -3,6 +3,7 @@ import BlogCard from "@/components/blog/BlogCard";
 import CommonTitle from "@/components/reuse/CommonTitle";
 import CommonWrapper from "@/components/shared/CommonWrapper";
 import Image from "next/image";
+import EffectTwo from "@/assets/images/EffectTwo.png";
 
 type BlogDetailProps = {
   params: {
@@ -18,16 +19,28 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
   return (
     <CommonWrapper>
       <div className="max-w-[80%] mx-auto">
-        <section className="text-center my-[1rem] sm:my-[1.5rem] lg:my-[3.5rem] space-y-2 sm:space-y-3">
-          <h1 className="text-[10px] lg:text-xs leading-[140%] text-white">
+        <section className="text-center  my-[1rem] sm:my-[1.5rem] lg:my-[3.5rem] space-y-2 sm:space-y-3">
+          <h1 className="text-[10px] lg:text-xs font-semibold leading-[140%] text-white">
             Latest Update
           </h1>
-          <p className="text-sm lg:text-[1.3rem] bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent">
+          <p className="text-sm lg:text-[1.3rem] font-semibold bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent">
             20- Novembar-2025
           </p>
         </section>
-        <section className="space-y-[1rem] lg:space-y-[2rem]">
-          <h1 className="text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-center leading-[140%] font-semibold bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent">
+        <section className="space-y-[1rem] lg:space-y-[2rem] relative">
+          <div
+            style={{
+              backgroundImage: `url(${EffectTwo.src})`,
+              backgroundPosition: "top center",
+              backgroundSize: "cover",
+            }}
+            className="absolute -top-44 z-0 w-full bg-no-repeat bg-center bg-contain min-h-[360px] 
+            sm:min-h-[600px] 
+            md:min-h-[700px] 
+            lg:min-h-[800px] 
+            xl:min-h-[900px]"
+          />{" "}
+          <h1 className="text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-center leading-[140%] font-semibold bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent z-20">
             Over 20 Stunning Screenshot-Based UX Design Inspirations to Elevate
             Your Digital Products in 2025.{" "}
           </h1>
@@ -35,12 +48,11 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
             <Image
               src={BlogImage.src}
               alt="blog-image"
-              width={200}
-              height={200}
-              className="w-[calc(100%-2vmax)] object-cover mx-auto rounded-[1.5rem] lg:rounded-[3rem]"
+              width={800}
+              height={600}
+              className="w-full max-w-[calc(100%-2vmax)] h-fit aspect-video object-cover mx-auto rounded-[1.5rem] lg:rounded-[3rem]"
             />
           </div>
-
           <h1 className="text-[1rem] sm:text-[1.5rem] lg:text-[2rem] leading-[140%] font-semibold bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent ">
             Over 20 Stunning Screenshot-Based UX Design Inspirations to Elevate
             Your Digital Products in 2025.{" "}
@@ -85,9 +97,9 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
           })}
         </section>
 
-        <section className="px-4 py-8">
+        <section className="px-4 py-8 space-y-[3rem] lg:space-y-[5rem] my-[5rem]">
           <CommonTitle text="here is our popular blogs" />
-          <BlogCard />
+          <BlogCard image="" alt="" text="" />
         </section>
       </div>
     </CommonWrapper>
