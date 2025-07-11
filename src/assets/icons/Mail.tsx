@@ -2,9 +2,8 @@ const Mail = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="18"
-      height="18"
-      viewBox="0 0 18 18"
+      className="w-[18px] h-[19px] sm:w-5 sm:h-5 "
+      viewBox="0 0 18 19"
       fill="none"
     >
       <path
@@ -16,10 +15,10 @@ const Mail = () => {
       <defs>
         <linearGradient
           id="paint0_linear_2190_301"
-          x1="18"
-          y1="0"
+          x1="14.5844"
+          y1="1.41699"
           x2="0"
-          y2="18"
+          y2="16.0014"
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#E6FAF7" />

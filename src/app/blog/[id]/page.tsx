@@ -1,4 +1,5 @@
 import BlogImage from "@/assets/images/image.png";
+import BlogCard from "@/components/blog/BlogCard";
 import CommonTitle from "@/components/reuse/CommonTitle";
 import CommonWrapper from "@/components/shared/CommonWrapper";
 import Image from "next/image";
@@ -16,16 +17,17 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
 
   return (
     <CommonWrapper>
-      <div className=" w-full sm:max-w-[80%] mx-auto">
-        {/* DATE AND TIME */}
+      <div className="max-w-[80%] mx-auto">
         <section className="text-center my-[1rem] sm:my-[1.5rem] lg:my-[3.5rem] space-y-2 sm:space-y-3">
-          <h1 className="text-sm leading-[140%] text-white">Last date 12</h1>
-          <p className="text-[1rem] sm:text-[1.5rem] bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent">
-            Updated date holo janina
+          <h1 className="text-[10px] lg:text-xs leading-[140%] text-white">
+            Latest Update
+          </h1>
+          <p className="text-sm lg:text-[1.3rem] bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent">
+            20- Novembar-2025
           </p>
         </section>
         <section className="space-y-[1rem] lg:space-y-[2rem]">
-          <h1 className="text-[2vmax] text-center leading-[140%] font-semibold bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent">
+          <h1 className="text-[1rem] sm:text-[1.5rem] lg:text-[2rem] text-center leading-[140%] font-semibold bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent">
             Over 20 Stunning Screenshot-Based UX Design Inspirations to Elevate
             Your Digital Products in 2025.{" "}
           </h1>
@@ -35,17 +37,17 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
               alt="blog-image"
               width={200}
               height={200}
-              className="w-full object-cover mx-auto rounded-[1.5rem] lg:rounded-[2.5rem]"
+              className="w-[calc(100%-2vmax)] object-cover mx-auto rounded-[1.5rem] lg:rounded-[3rem]"
             />
           </div>
 
-          <h1 className="text-[1.5vmax] text-center leading-[140%] font-semibold bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent ">
+          <h1 className="text-[1rem] sm:text-[1.5rem] lg:text-[2rem] leading-[140%] font-semibold bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent ">
             Over 20 Stunning Screenshot-Based UX Design Inspirations to Elevate
             Your Digital Products in 2025.{" "}
           </h1>
         </section>
-        {/* paragrap */}
-        <p className="text-sm leading-[170%] mt-[1rem] lg:mt-[2rem] text-white mb-[1rem] lg:mb-[2rem]">
+
+        <p className="text-xs sm:text-sm leading-[180%] mt-[1rem] lg:mt-[2rem] text-white mb-[1rem] lg:mb-[2rem]">
           Founded by Liang Wenfeng in December 2023, DeepSeek quickly rolled out
           its first AI model, DeepSeek LLM, that same month. In May 2024, they
           upped their game with DeepSeek-V2.  This model stood out for its
@@ -69,37 +71,23 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
           or coding completely, it helps by providing starting points. Thus, it
           can save you time while ensuring consistency across designs.
         </p>
-        {/* TAGs */}
+
         <section className=" flex flex-wrap items-center gap-3 sm:gap-8 text-white">
-          <p className="rounded-smcardRound px-4 py-2 lg:py-3 lg:px-7  bg-accent-foreground ">
-            log tags
-          </p>
-          <p className="rounded-smcardRound px-4 py-2 lg:py-3 lg:px-7  bg-accent-foreground ">
-            log tags
-          </p>
-          <p className="rounded-smcardRound px-4 py-2 lg:py-3 lg:px-7  bg-accent-foreground ">
-            log tags
-          </p>
-          <p className="rounded-smcardRound px-4 py-2 lg:py-3 lg:px-7  bg-accent-foreground ">
-            log tags
-          </p>
+          {["web development", "UI/UX", "Grapics"].map((item) => {
+            return (
+              <p
+                key={item}
+                className="rounded-smcardRound py-[0.7vmax] px-[1.5vmax] text-[10px] sm:text-sm  bg-accent-foreground "
+              >
+                {item}
+              </p>
+            );
+          })}
         </section>
-        {/* BLOGS CARD */}
+
         <section className="px-4 py-8">
           <CommonTitle text="here is our popular blogs" />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((_, index) => (
-              <Image
-                key={index}
-                src={BlogImage.src}
-                alt={`blog-${index}`}
-                width={400}
-                height={300}
-                className="w-full mx-w-1/3 aspect-[4/3] object-cover rounded-smcardRound"
-              />
-            ))}
-          </div>
+          <BlogCard />
         </section>
       </div>
     </CommonWrapper>

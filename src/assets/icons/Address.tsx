@@ -2,11 +2,9 @@ const Address = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
+      className="w-[18px] h-[19px] sm:w-5 sm:h-5 mt-1"
+      viewBox="0 0 18 19"
       fill="none"
-      className="mt-1"
     >
       <path
         d="M15.9113 4.13732C16 5.14653 16 6.40451 16 8C16 11.3069 16 13.164 15.2101 14.361L10.4489 9.59986L15.9113 4.13732Z"

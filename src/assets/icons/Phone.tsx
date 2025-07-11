@@ -2,9 +2,8 @@ const Phone = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
+      className="w-[18px] h-[19px] sm:w-5 sm:h-5 "
+      viewBox="0 0 18 19"
       fill="none"
     >
       <path
@@ -22,36 +21,15 @@ const Phone = () => {
         fill="url(#paint2_linear_2190_305)"
       />
       <defs>
-        <linearGradient
-          id="paint0_linear_2190_305"
-          x1="14.5844"
-          y1="1.41699"
-          x2="0"
-          y2="16.0014"
-          gradientUnits="userSpaceOnUse"
-        >
+        <linearGradient id="paint0_linear_2190_305" x1="14.5844" y1="1.41699" x2="0" y2="16.0014" gradientUnits="userSpaceOnUse">
           <stop stopColor="#E6FAF7" />
           <stop offset="0.903846" stopColor="#00D1AE" />
         </linearGradient>
-        <linearGradient
-          id="paint1_linear_2190_305"
-          x1="16"
-          y1="-0.000976562"
-          x2="8.30282"
-          y2="7.694"
-          gradientUnits="userSpaceOnUse"
-        >
+        <linearGradient id="paint1_linear_2190_305" x1="16" y1="-0.000976562" x2="8.30282" y2="7.694" gradientUnits="userSpaceOnUse">
           <stop stopColor="#E6FAF7" />
           <stop offset="0.903846" stopColor="#00D1AE" />
         </linearGradient>
-        <linearGradient
-          id="paint2_linear_2190_305"
-          x1="16"
-          y1="-0.000976562"
-          x2="8.30282"
-          y2="7.694"
-          gradientUnits="userSpaceOnUse"
-        >
+        <linearGradient id="paint2_linear_2190_305" x1="16" y1="-0.000976562" x2="8.30282" y2="7.694" gradientUnits="userSpaceOnUse">
           <stop stopColor="#E6FAF7" />
           <stop offset="0.903846" stopColor="#00D1AE" />
         </linearGradient>
