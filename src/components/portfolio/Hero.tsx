@@ -33,7 +33,7 @@ const Hero = () => {
       >
         <CommonWrapper>
           <div className="max-w-fit mx-auto space-y-8 lg:space-y-12 pt-12 lg:pt-28">
-            <div className="rounded-[20px] p-4 sm:px-6 sm:py-5 backdrop-blur-[25px] w-fit mx-auto text-white bg-[rgba(0,40,32,0.3)] text-center space-y-3">
+            <div className="rounded-[20px] p-4 sm:px-6 sm:py-5 backdrop-blur-[25px] w-fit mx-auto text-white bg-[rgba(12,26,24,0.3)] text-center space-y-3">
               {/* Rating Block */}
               <div className="flex items-center gap-3 justify-center">
                 <Google />

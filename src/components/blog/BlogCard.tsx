@@ -14,7 +14,7 @@ const BlogCard = ({ id = "sample-id" }: { id: string }) => {
   return (
     <>
       {/* ✅ Grid layout for lg+ */}
-      <div className="hidden  lg:grid grid-cols-3 gap-6">
+      <div className="hidden lg:grid grid-cols-3 gap-6">
         {blogItems.slice(0, 3).map((_, index) => (
           <Link key={index} href={`/blog/${id}`} className="space-y-2">
             <Image
@@ -49,9 +49,9 @@ const BlogCard = ({ id = "sample-id" }: { id: string }) => {
           }}
           breakpoints={{
             0: { slidesPerView: 1 },
-            640: { slidesPerView: 2 },
+            600: { slidesPerView: 2 },
           }}
-          className="w-full gap-5 md:gap-3"
+          className="w-full gap-5 md:gap-3 !overflow-visible"
         >
           {blogItems.map((_, index) => (
             <SwiperSlide key={index}>
@@ -76,6 +76,8 @@ const BlogCard = ({ id = "sample-id" }: { id: string }) => {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        <div className="custom-swiper-pagination !relative !mt-2 flex justify-center gap-2" />
       </div>
     </>
   );

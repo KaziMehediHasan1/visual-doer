@@ -70,7 +70,6 @@
 }
 
 :root {
-  
   /* OTHERS */
   --radius-primaryRound: 99px;
   --radius-cardRound: 40px;
@@ -166,8 +165,22 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
-    @apply bg-background text-foreground;
-    @apply font-sora;
+    @apply bg-background text-foreground font-sora;
+  }
+
+  /* Use the same class as pagination container */
+  .custom-swiper-pagination {
+    @apply flex justify-center items-center gap-2 mt-4;
+  }
+
+  /* Target bullets inside custom container */
+  .custom-swiper-pagination-bullet {
+    @apply w-2 h-2 bg-white rounded-full opacity-60 transition-all duration-300;
+  }
+
+  .custom-swiper-pagination-bullet-active {
+    @apply w-5 bg-white opacity-100;
   }
 }
