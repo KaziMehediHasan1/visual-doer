@@ -1,6 +1,7 @@
 import React from "react";
 import CommonTitle from "../reuse/CommonTitle";
 import Background from "@/assets/images/mooneffect.png";
+import ServiceCard from "../reuse/ServiceCard";
 const Brand = () => {
   return (
     <>
@@ -18,11 +19,14 @@ const Brand = () => {
             backgroundSize: "contain",
           }}
         >
-          <div className="rotate-180 absolute inset-0">
+          <div className="rotate-180 absolute inset-0 pt-28">
             <CommonTitle
               text="we must provide
               with your brand"
             />
+            <div>
+              <ServiceCard />
+            </div>
           </div>
         </div>
       </section>
