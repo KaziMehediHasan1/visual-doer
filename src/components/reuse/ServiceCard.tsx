@@ -1,5 +1,12 @@
+import CommonWrapper from "../shared/CommonWrapper";
+
 const ServiceCard = () => {
-  return <div className="text-white">dfdf</div>;
+  return (
+    <CommonWrapper>
+      {" "}
+      <div className="text-white">dfdf</div>
+    </CommonWrapper>
+  );
 };
 
 export default ServiceCard;

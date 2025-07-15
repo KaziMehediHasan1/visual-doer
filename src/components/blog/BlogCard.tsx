@@ -22,7 +22,7 @@ const BlogCard = ({ id = "sample-id" }: { id: string }) => {
               alt={`blog-${index}`}
               width={400}
               height={200}
-              className="w-full aspect-[4/3] object-cover rounded-[1rem]"
+              className="w-full max-w-[384px] mx-auto aspect-[4/3] object-cover rounded-[1rem]"
             />
             <ul className="text-sm lg:text-xl text-white list-none space-y-2">
               <li className="flex items-center gap-2">
@@ -49,7 +49,7 @@ const BlogCard = ({ id = "sample-id" }: { id: string }) => {
           }}
           breakpoints={{
             0: { slidesPerView: 1 },
-            600: { slidesPerView: 2 },
+            640: { slidesPerView: 2 },
           }}
           className="w-full gap-5 md:gap-3 !overflow-visible"
         >
@@ -57,14 +57,14 @@ const BlogCard = ({ id = "sample-id" }: { id: string }) => {
             <SwiperSlide key={index}>
               <Link
                 href={`/blog/${id}`}
-                className="space-y-2 w-full sm:max-w-[calc(100%-2vmax)] h-fit object-cover mx-auto block"
+                className="space-y-2 w-full max-w-[384px] mx-auto object-cover  block"
               >
                 <Image
                   src={BlogImage.src}
                   alt={`blog-${index}`}
                   width={400}
                   height={200}
-                  className="w-full sm:max-w-[calc(100%-2vmax)] h-fit aspect-auto object-cover mx-auto rounded-[1rem]"
+                  className="w-full max-w-[calc(100%-2vmax)] h-fit aspect-auto object-cover mx-auto rounded-[1rem]"
                 />
                 <ul className="text-sm lg:text-xl text-white list-none space-y-2">
                   <li className="flex items-center gap-2">

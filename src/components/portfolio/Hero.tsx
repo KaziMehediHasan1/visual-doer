@@ -4,6 +4,8 @@ import Star from "@/assets/Logo/Star";
 import CommonWrapper from "../shared/CommonWrapper";
 import Gurranty from "@/assets/Logo/Gurranty";
 import PrimaryButton from "../reuse/PrimaryButton";
+import CommonTitle from "../reuse/CommonTitle";
+import ServiceCard from "../reuse/ServiceCard";
 const Hero = () => {
   return (
     <div className="w-full mt-10 sm:mt-[60px] ">
@@ -74,6 +76,32 @@ const Hero = () => {
           </p>
         </CommonWrapper>
       </div>
+      <section className="relative -top-80 2xl:-top-28 w-full">
+        <div
+          className="relative inset-0 w-full rotate-180 bg-no-repeat bg-center bg-contain min-[360px] 
+        sm:min-h-[600px] 
+        md:min-h-[700px] 
+        lg:min-h-[800px] 
+        xl:min-h-[900px]"
+          style={{
+            backgroundImage: `url(${Background.src})`,
+            backgroundPosition: "center bottom",
+            backgroundSize: "contain",
+          }}
+        >
+          <div className="rotate-180 absolute inset-0 pt-28">
+            <CommonTitle
+              style="max-w-[300px]
+             md:max-w-[500px]"
+              text="we must provide
+              with your brand"
+            />
+            <div>
+              <ServiceCard />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

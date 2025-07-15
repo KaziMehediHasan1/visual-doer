@@ -53,7 +53,10 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
               alt="blog-image"
               width={800}
               height={800}
-              className="w-full sm:max-w-[calc(100%-2vmax)] h-fit aspect-auto object-cover mx-auto rounded-[1.5rem] lg:rounded-[3rem] shadow-xl"
+              className="w-full h-auto aspect-auto object-cover 
+              
+               mx-auto 
+               rounded-[1.5rem] lg:rounded-[3rem] shadow-xl"
             />
           </div>
 
@@ -105,7 +108,11 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
       </div>{" "}
       {/* CARD SECTION */}
       <section className="px-4 py-8 space-y-[1rem] lg:space-y-[4rem] my-[1rem] lg:mt-[4rem]">
-        <CommonTitle text="here is our popular blogs" />
+        <CommonTitle
+          style="max-w-[300px]
+             md:max-w-[400px]"
+          text="here is our popular blogs"
+        />
         <BlogCard image="" alt="" text="" id="" />
       </section>
     </CommonWrapper>
