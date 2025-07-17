@@ -1,10 +1,68 @@
+import RightArrow from "@/assets/icons/RightArrow";
 import CommonWrapper from "../shared/CommonWrapper";
+import { Button } from "../ui/button";
+import PrimaryButton from "./PrimaryButton";
 
 const ServiceCard = () => {
+  const data = [
+    {
+      title: "Game Developer",
+      des: "lrem10kjjjjfjakdfj",
+    },
+    {
+      title: "Web Developer",
+      des: "lrem10kjjjjfjakdfj",
+    },
+    {
+      title: "App Developer",
+      des: "lrem10kjjjjfjakdfj",
+    },
+  ];
   return (
     <CommonWrapper>
-      
-      <div className="text-white">dfdf</div>
+      <div className="space-y-20">
+        <section className="flex items-center gap-6">
+          {data?.map((Item, index) => {
+            return (
+              <div
+                key={index}
+                className="w-full max-w-[360px] p-9 mt-16 2xl:mt-56 rounded-[40px] bg-[url('/your-image.jpg')] bg-[lightgray] bg-cover bg-no-repeat bg-center backdrop-blur-[10px] bg-blend-overlay xl:h-[330px] flex flex-col justify-between"
+                style={{ backgroundColor: "rgba(0, 40, 32, 0.3)" }}
+              >
+                {/* TOP CONTENT */}
+                <div className="space-y-2">
+                  <h2
+                    className="mb-2 bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)]
+             bg-clip-text
+             text-transparent
+             leading-[140%]
+             w-full
+             mx-auto text-[1.5rem] xl:text-[2rem] font-semibold"
+                  >
+                    {Item.title}
+                  </h2>
+                  <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent leading-[170%] text-[1rem] font-semibold">
+                    This is your custom card content with a blurred background
+                    and image overlay.
+                  </p>
+                </div>
+
+                {/* BUTTON AT BOTTOM */}
+                <div className="pt-4">
+                  <Button
+                    size="lg"
+                    style={{ backgroundColor: "rgba(255,255,255,0.10)" }}
+                    className="rounded-primaryRound cursor-pointer w-12 h-12"
+                  >
+                    <RightArrow />
+                  </Button>
+                </div>
+              </div>
+            );
+          })}
+        </section>
+        <PrimaryButton text="Explore More" />
+      </div>
     </CommonWrapper>
   );
 };

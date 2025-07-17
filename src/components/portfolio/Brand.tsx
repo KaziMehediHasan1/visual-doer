@@ -6,18 +6,18 @@ const Brand = () => {
   return (
     <>
       {/* brand section */}
-      <section className="relative -top-80 2xl:-top-28 w-full">
+      <section className="relative -top-80 2xl:-top-44 w-full">
         <div
-        className="relative inset-0 w-full rotate-180 bg-no-repeat bg-center bg-contain min-[360px] 
+          className="relative inset-0 w-full rotate-180 bg-no-repeat bg-center bg-contain min-[360px] 
         sm:min-h-[600px] 
         md:min-h-[700px] 
         lg:min-h-[800px] 
         xl:min-h-[900px]"
-        style={{
+          style={{
             backgroundImage: `url(${Background.src})`,
             backgroundPosition: "center bottom",
             backgroundSize: "contain",
-        }}
+          }}
         >
           <div className="rotate-180 absolute inset-0 pt-28">
             <CommonTitle
@@ -26,9 +26,8 @@ const Brand = () => {
               text="we must provide
               with your brand"
             />
-            <div>
-              <ServiceCard />
-            </div>
+
+            <ServiceCard />
           </div>
         </div>
       </section>
