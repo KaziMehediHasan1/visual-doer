@@ -53,8 +53,7 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
               alt="blog-image"
               width={800}
               height={800}
-              className="w-full h-auto aspect-auto object-cover 
-              
+              className="w-full h-auto aspect-auto object-cover  
                mx-auto 
                rounded-[1.5rem] lg:rounded-[3rem] shadow-xl"
             />
