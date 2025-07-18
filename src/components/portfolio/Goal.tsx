@@ -8,9 +8,9 @@ const Goal = () => {
         <CommonTitle
           text="set your gaol with us"
           style="max-w-[250px]
-             md:max-w-[300px]"
+          md:max-w-[300px]"
         />
-        <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent leading-[140%] text-[18px] sm:text-[24px] lg:text-[26px] font-semibold text-center max-w-[80%] mx-auto mt-10 md:mt-[160px]">
+        <p className="text-center md:text-[18px] sm:text-[13px] text-xs sm:max-w-[70%] mx-auto bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent leading-[140%]">
           Set your goals with us and turn your vision into reality. Together,
           well create a strategic roadmap to achieve lasting success.
         </p>

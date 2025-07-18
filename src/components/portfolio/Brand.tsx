@@ -2,27 +2,28 @@ import React from "react";
 import CommonTitle from "../reuse/CommonTitle";
 import Background from "@/assets/images/mooneffect.png";
 import ServiceCard from "../reuse/ServiceCard";
+
 const Brand = () => {
   return (
     <>
       {/* brand section */}
-      <section className="relative -top-80 2xl:-top-44 w-full">
+      <section className="relative -top-96 xl:-top-64 w-full  lg:mt-[160px]">
         <div
-          className="relative inset-0 w-full rotate-180 bg-no-repeat bg-center bg-contain min-[360px] 
+        className="relative -top-28 w-full rotate-180 bg-no-repeat bg-center bg-contain min-[360px] 
         sm:min-h-[600px] 
         md:min-h-[700px] 
         lg:min-h-[800px] 
         xl:min-h-[900px]"
           style={{
             backgroundImage: `url(${Background.src})`,
-            backgroundPosition: "center bottom",
+            backgroundPosition: "center ",
             backgroundSize: "contain",
           }}
         >
-          <div className="rotate-180 absolute inset-0 pt-28">
+          <div className="rotate-180 absolute inset-0 ">
             <CommonTitle
               style="max-w-[300px]
-             md:max-w-[500px]"
+              md:max-w-[500px] pt-[175px]"
               text="we must provide
               with your brand"
             />

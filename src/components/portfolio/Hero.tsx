@@ -6,7 +6,7 @@ import Gurranty from "@/assets/Logo/Gurranty";
 import PrimaryButton from "../reuse/PrimaryButton";
 const Hero = () => {
   return (
-    <div className="w-full mt-10 sm:mt-[60px] ">
+    <div className="w-full mt-10 sm:mt-[60px]">
       {/* TEXT SECTION */}
       <section className="max-w-[75%] w-full mx-auto space-y-3 sm:space-y-5">
         <h1 className="text-[4.5vmax] leading-[120%] font-semibold text-center bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent">
@@ -33,7 +33,7 @@ const Hero = () => {
       >
         <CommonWrapper>
           <div className="max-w-fit mx-auto space-y-8 lg:space-y-12 pt-12 lg:pt-28">
-            <div className="rounded-[20px] p-4 sm:px-6 sm:py-5 backdrop-blur-[25px] w-fit mx-auto text-white bg-[rgba(12,26,24,0.3)] text-center space-y-3">
+            <div className="rounded-[20px] p-4 sm:px-6 sm:py-5 backdrop-blur-[25px] w-fit mx-auto text-white bg-[rgba(26,59,55,0.3)] text-center space-y-3">
               {/* Rating Block */}
               <div className="flex items-center gap-3 justify-center">
                 <Google />

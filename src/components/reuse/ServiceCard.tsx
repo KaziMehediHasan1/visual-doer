@@ -20,14 +20,14 @@ const ServiceCard = () => {
   ];
   return (
     <CommonWrapper>
-      <div className="space-y-20">
+      <div className="space-y-14 mt-24">
         <section className="flex items-center gap-6">
           {data?.map((Item, index) => {
             return (
               <div
                 key={index}
-                className="w-full max-w-[360px] p-9 mt-16 2xl:mt-56 rounded-[40px] bg-[url('/your-image.jpg')] bg-[lightgray] bg-cover bg-no-repeat bg-center backdrop-blur-[10px] bg-blend-overlay xl:h-[330px] flex flex-col justify-between"
-                style={{ backgroundColor: "rgba(0, 40, 32, 0.3)" }}
+                className="w-full max-w-[360px] p-9 mt-16 rounded-[40px] bg-[url('/your-image.jpg')] bg-[lightgray] bg-cover bg-no-repeat bg-center backdrop-blur-[10px] bg-blend-overlay xl:h-[330px] flex flex-col justify-between"
+                style={{ backgroundColor: "rgba(0, 50, 40, 0.4)" }}
               >
                 {/* TOP CONTENT */}
                 <div className="space-y-2">
@@ -52,7 +52,7 @@ const ServiceCard = () => {
                   <Button
                     size="lg"
                     style={{ backgroundColor: "rgba(255,255,255,0.10)" }}
-                    className="rounded-primaryRound cursor-pointer w-12 h-12"
+                    className="rounded-primaryRound cursor-pointer w-12 h-12 "
                   >
                     <RightArrow />
                   </Button>
