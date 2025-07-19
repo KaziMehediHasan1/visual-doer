@@ -36,7 +36,7 @@ const Navbar = () => {
                 to={link.to}
                 duration={500}
                 smooth={true}
-                className="text-white cursor-pointer hover:text-accent transition"
+                className="text-white hover:text-primary-400 cursor-pointer  transition"
               >
                 {link.label}
               </Link>

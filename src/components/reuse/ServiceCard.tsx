@@ -33,11 +33,11 @@ const ServiceCard = () => {
                 <div className="space-y-2">
                   <h2
                     className="mb-2 bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)]
-             bg-clip-text
-             text-transparent
-             leading-[140%]
-             w-full
-             mx-auto text-[1.5rem] xl:text-[2rem] font-semibold"
+                    bg-clip-text
+                    text-transparent
+                    leading-[140%]
+                    w-full
+                    mx-auto text-[1.5rem] xl:text-[2rem] font-semibold"
                   >
                     {Item.title}
                   </h2>
@@ -48,15 +48,12 @@ const ServiceCard = () => {
                 </div>
 
                 {/* BUTTON AT BOTTOM */}
-                <div className="pt-4">
-                  <Button
-                    size="lg"
-                    style={{ backgroundColor: "rgba(255,255,255,0.10)" }}
-                    className="rounded-primaryRound cursor-pointer w-12 h-12 "
-                  >
-                    <RightArrow />
-                  </Button>
-                </div>
+                <Button
+                  size="lg"
+                  className="group rounded-primaryRound cursor-pointer bg-white/10 w-12 h-12 hover:bg-gradient-to-tr hover:to-primary-200 hover:from-primary-500 transform duration-300 hover:rotate-6"
+                >
+                  <RightArrow style="group-hover:text-black" />
+                </Button>
               </div>
             );
           })}
