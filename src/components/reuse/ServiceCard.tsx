@@ -20,7 +20,7 @@ const ServiceCard = () => {
   ];
   return (
     <CommonWrapper>
-      <div className="space-y-14 mt-24">
+      <div className="space-y-14 py-5">
         <section className="flex items-center gap-6">
           {data?.map((Item, index) => {
             return (

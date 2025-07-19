@@ -5,7 +5,7 @@ import Image from "@/assets/images/EffectTwo.png";
 const Goal = () => {
   return (
     <CommonWrapper>
-      <div className="w-full">
+      <div className="w-full ">
         {/* TEXT SECTION */}
         <section className="">
           <CommonTitle
@@ -18,7 +18,9 @@ const Goal = () => {
           </p>
         </section>
 
-        {/* BACKGROUND SECTION */}
+       
+      </div>
+       {/* BACKGROUND SECTION */}
         <section
           style={{
             backgroundImage: `url(${Image.src})`,
@@ -26,13 +28,12 @@ const Goal = () => {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
-          className="w-full min-h-[400px] sm:min-h-[600px] lg:min-h-[800px] xl:min-h-[900px"
+          className=" w-full min-h-[400px] sm:min-h-[600px] lg:min-h-[800px] xl:min-h-[900px"
         >
           <div className="text-white mt-20 w-[calc(100%_-_200px)] mx-auto">
             dfadfadfadff
           </div>
         </section>
-      </div>
     </CommonWrapper>
   );
 };

@@ -1,5 +1,5 @@
 import Google from "@/assets/icons/Google";
-import Background from "@/assets/images/mooneffect.png";
+import Background from "@/assets/images/MoonShape.png";
 import Star from "@/assets/Logo/Star";
 import CommonWrapper from "../shared/CommonWrapper";
 import Gurranty from "@/assets/Logo/Gurranty";
@@ -22,9 +22,8 @@ const Hero = () => {
       <div
         className="w-full bg-no-repeat bg-center bg-contain min-h-[360px] 
         sm:min-h-[600px] 
-        md:min-h-[700px] 
-        lg:min-h-[800px] 
-        xl:min-h-[900px]"
+        md:min-h-[700px]  
+        lg:min-h-[750px]"
         style={{
           backgroundImage: `url(${Background.src})`,
           backgroundPosition: "center top",
