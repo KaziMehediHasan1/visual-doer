@@ -10,7 +10,7 @@ type PageProps = {
   };
 };
 const BlogDetails = ({ params }: PageProps) => {
-  const id = params.id;
+  const id = params?.id;
   console.log(id, "blog details id");
   return (
     <CommonWrapper>

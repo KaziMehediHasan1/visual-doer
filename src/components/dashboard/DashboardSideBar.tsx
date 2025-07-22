@@ -38,57 +38,47 @@ const items = [
     icon: LayoutDashboard,
   },
   {
-    title: "Create New Course",
-    url: "create-course",
+    title: "Blog",
+    url: "/dashboard/blog",
     icon: FilePlus2,
   },
   {
-    title: "My Courses",
-    url: "my-course",
+    title: "Review",
+    url: "/dashboard/review",
     icon: CalendarDays,
   },
   {
-    title: "My Earning",
-    url: "my-earning",
+    title: "Project",
+    url: "/dashboard/projects",
     icon: CircleDollarSign,
   },
   {
-    title: "Support",
-    url: "support",
+    title: "Faq",
+    url: "/dashboard/faq",
     icon: HandHeart,
   },
   {
-    title: "Classes",
-    url: "classe",
+    title: "Skill",
+    url: "/dashboard/skills",
     icon: Users,
   },
   {
-    title: "Profile",
-    url: "profile",
+    title: "Team",
+    url: "/dashboard/Team",
     icon: UserPen,
-  },
-  {
-    title: "Settings",
-    url: "setting",
-    icon: Settings,
-  },
-  {
-    title: "LogOut",
-    url: "logout",
-    icon: LogOut,
   },
 ];
 
 export function DashboardSidebar() {
   const pathname = usePathname();
   return (
-    <Sidebar className="bg-none">
-      <SidebarContent>
+    <Sidebar className="h-screen border-none bg-gray-900 text-white p-4">
+      <SidebarContent className=" bg-gray-900">
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
               {/* LOGO  */}
-              <div className="flex items-center gap-2 p-1.5">
+              <div className="flex items-center gap-2 p-1.5 mb-2">
                 <PrimaryLogo />
               </div>
               {items.map((item) => (

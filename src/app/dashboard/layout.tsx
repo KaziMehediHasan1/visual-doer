@@ -6,11 +6,13 @@ const DashboardLayout = ({
   children,
 }: Readonly<{ children: React.ReactNode }>) => {
   return (
-    <SidebarProvider className="font-[var(--font-vietnam)]">
+    <SidebarProvider>
       <DashboardSidebar />
-      <main className="w-full">
-        <SidebarTrigger />
-        {children}
+      <main className="w-full bg-blue-950/30">
+        <SidebarTrigger  className="hover:bg-gray-200 hover:rounded-lg text-white "/>
+        <div className="">
+          {children}
+        </div>
       </main>
     </SidebarProvider>
   );
