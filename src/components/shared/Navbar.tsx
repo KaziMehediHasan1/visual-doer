@@ -6,7 +6,7 @@ import { Link } from "react-scroll";
 import PrimaryButton from "../reuse/NavButton";
 import ToggleBar from "@/assets/icons/ToggleBar";
 import CommonWrapper from "./CommonWrapper";
-import { X } from "lucide-react"; // ❗Need Lucide for close icon. Install: `npm i lucide-react`
+import { X } from "lucide-react"; 
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

@@ -3,6 +3,8 @@ import { Sora } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import { usePathname } from "next/navigation";
+
 
 // Import all weights from 100 to 800
 const sora = Sora({
@@ -14,15 +16,15 @@ const sora = Sora({
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
+  const pathname = usePathname()
+  const HideNavAndFooter = pathname?.startsWith("/dashboard");
   return (
     <html lang="en" className={`${sora.variable}`}>
       <body className="antialiased bg-primaryBG">
-        <Navbar />
+        {!HideNavAndFooter && <Navbar />}
         {children}
-        <Footer />
+        {!HideNavAndFooter && <Footer />}
       </body>
     </html>
   );
