@@ -82,7 +82,7 @@ const items = [
 export function DashboardSidebar() {
   const pathname = usePathname();
   return (
-    <Sidebar>
+    <Sidebar className="bg-none">
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>
@@ -90,7 +90,6 @@ export function DashboardSidebar() {
               {/* LOGO  */}
               <div className="flex items-center gap-2 p-1.5">
                 <PrimaryLogo />
-                <h1 className="font-semibold text-xl">Educo</h1>
               </div>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>

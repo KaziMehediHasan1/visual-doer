@@ -4,17 +4,14 @@ import CommonTitle from "@/components/reuse/CommonTitle";
 import CommonWrapper from "@/components/shared/CommonWrapper";
 import Image from "next/image";
 import EffectTwo from "@/assets/images/EffectTwo.png";
-
-type BlogDetailProps = {
+type PageProps = {
   params: {
     id: string;
   };
 };
-
-const BlogDetails = async ({ params }: BlogDetailProps) => {
+const BlogDetails = ({ params }: PageProps) => {
   const id = params.id;
-  console.log("Blog ID:", id);
-
+  console.log(id, "blog details id");
   return (
     <CommonWrapper>
       <div className="max-w-[80%] mx-auto mt-16 lg:mt-24">
@@ -75,7 +72,7 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
           DeepSeek-R1, an open-source reasoning model designed to tackle
           scientific problems. Since its release, DeepSeek has been gaining
           attention for its user-friendly approach and versatility. And the best
-          part? It’s designed to grow with you, no matter what sector you're
+          part? It’s designed to grow with you, no matter what sector youre
           coming from. DeepSeek streamlines UX design by automating UI
           generation, brainstorming scenarios, enhancing research, and refining
           microcopy. It simplifies workflows, supports prototyping, and aids
@@ -112,7 +109,7 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
              md:max-w-[400px]"
           text="here is our popular blogs"
         />
-        <BlogCard image="" alt="" text="" id="" />
+        <BlogCard id="#" />
       </section>
     </CommonWrapper>
   );
