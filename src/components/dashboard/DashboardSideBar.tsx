@@ -4,9 +4,9 @@ import {
   Home,
   Users,
   HandHeart,
-  Settings,
+
   LayoutDashboard,
-  LogOut,
+
   CalendarDays,
   CircleDollarSign,
   FilePlus2,

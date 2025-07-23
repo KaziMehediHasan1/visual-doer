@@ -26,7 +26,7 @@ const ServiceCard = () => {
             return (
               <div
                 key={index}
-                className="w-full max-w-[360px] p-9 mt-16 rounded-[40px] bg-[url('/your-image.jpg')] bg-[lightgray] bg-cover bg-no-repeat bg-center backdrop-blur-[10px] bg-blend-overlay xl:h-[330px] flex flex-col justify-between"
+                className="w-full max-w-[360px] p-9 mt-16 rounded-[40px] bg-[lightgray] bg-cover bg-no-repeat bg-center backdrop-blur-[10px] bg-blend-overlay xl:h-[330px] flex flex-col justify-between"
                 style={{ backgroundColor: "rgba(0, 50, 40, 0.4)" }}
               >
                 {/* TOP CONTENT */}
