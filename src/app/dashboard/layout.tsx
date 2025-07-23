@@ -1,6 +1,5 @@
 import { DashboardSidebar } from "@/components/dashboard/DashboardSideBar";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import React from "react";
 
 const DashboardLayout = ({
   children,
@@ -9,10 +8,8 @@ const DashboardLayout = ({
     <SidebarProvider>
       <DashboardSidebar />
       <main className="w-full bg-blue-950/30">
-        <SidebarTrigger  className="hover:bg-gray-200 hover:rounded-lg text-white "/>
-        <div className="">
+      <SidebarTrigger className="hover:bg-gray-200 hover:rounded-lg text-white"/>
           {children}
-        </div>
       </main>
     </SidebarProvider>
   );

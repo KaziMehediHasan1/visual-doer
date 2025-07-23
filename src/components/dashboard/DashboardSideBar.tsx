@@ -34,7 +34,7 @@ const items = [
   },
   {
     title: "Dashboard",
-    url: "",
+    url: "/dashboard",
     icon: LayoutDashboard,
   },
   {
@@ -83,11 +83,8 @@ export function DashboardSidebar() {
               </div>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton
-                    isActive={pathname.startsWith(item?.url)}
-                    asChild
-                  >
-                    <Link href={item.url}>
+                  <SidebarMenuButton isActive={pathname == item.url} asChild>
+                    <Link href={item?.url ? item?.url : "/dashboard"}>
                       <item.icon className="w-5 h-5" />
                       <span>{item.title}</span>
                     </Link>
