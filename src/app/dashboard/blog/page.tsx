@@ -1,20 +1,33 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { FormEvent } from "react";
+import Image from "next/image";
+import { FormEvent, useState } from "react";
 
 const Blog = () => {
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
-    e.preventDefault()
-    const input = e.target;
-    const title = input.title.value;
-    const subTitle = input.subTitle.value;
-    const image = input.image.value;
-    const description = input.description.value;
-    const data = { title, subTitle, tag, image, description };
-    console.log(data, "blog form data");
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const imageFile = formData.get("image") as File;
+
+    const data = {
+      title: formData.get("title") as string,
+      subTitle: formData.get("subTitle") as string,
+      tag: formData.get("tag") as string,
+      image: URL.createObjectURL(imageFile),
+      description: formData.get("description") as string,
+    };
+
+    console.log(data, previewImage, "✅ blog form data");
+    // You can now send `data` to your backend API
   };
+
   return (
     <div className="text-white px-4 py-3 ">
+      <Image height={300} width={300} src={previewImage} alt="image" />
       <form
         onSubmit={handleSubmit}
         className="bg-primary-400/30 rounded-lg p-3 space-y-5"
@@ -37,6 +50,7 @@ const Blog = () => {
           <input
             className="w-full border-gray-300 border-[2px] rounded-sm p-[0.3vmax]"
             type="text"
+            name="tag"
             placeholder="enter blog title"
           />
           <input
