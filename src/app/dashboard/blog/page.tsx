@@ -5,24 +5,34 @@ import axios from "axios";
 const Blog = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const form = e.currentTarget;
-    const formData = new FormData(form);
-    console.log(formData,"10 just image")
-    const imageFile = formData.get("image") as File;
+    // const formData = new FormData();
 
-    const title = formData.get("title") as string;
-    const subtitle = formData.get("subTitle") as string;
-    const keyword = formData.get("tag") as string;
-    const image = URL.createObjectURL(imageFile);
-    const description = formData.get("description") as string;
-    const data = { title, subtitle, keyword, image, description };
+    // get raw input values
+    const title = (form.elements.namedItem("title") as HTMLInputElement).value;
+    const subtitle = (form.elements.namedItem("subTitle") as HTMLInputElement)
+      .value;
+    const keyword = (form.elements.namedItem("tag") as HTMLInputElement).value;
+    const description = (
+      form.elements.namedItem("description") as HTMLTextAreaElement
+    ).value;
+    const imageFile = (form.elements.namedItem("image") as HTMLInputElement)
+      ?.files?.[0];
 
-    console.log(data.image, "✅ blog form data");
+    console.log(imageFile, "right image too?");
+
+    const data = { title, subtitle, keyword, description, imageFile };
+
     try {
-      const res = await axios.post("/dashboard/blog/api", data);
+      const res = await axios.post("/dashboard/blog/api", data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       console.log(res.data);
     } catch (error) {
-      console.log(error, "upload err");
+      console.error("Upload failed", error);
     }
   };
 
