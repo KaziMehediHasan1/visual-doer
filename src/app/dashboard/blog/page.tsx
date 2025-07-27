@@ -7,32 +7,25 @@ const Blog = () => {
     e.preventDefault();
 
     const form = e.currentTarget;
-    // const formData = new FormData();
-
-    // get raw input values
-    const title = (form.elements.namedItem("title") as HTMLInputElement).value;
-    const subtitle = (form.elements.namedItem("subTitle") as HTMLInputElement)
-      .value;
-    const keyword = (form.elements.namedItem("tag") as HTMLInputElement).value;
-    const description = (
-      form.elements.namedItem("description") as HTMLTextAreaElement
-    ).value;
-    const imageFile = (form.elements.namedItem("image") as HTMLInputElement)
-      ?.files?.[0];
-
-    console.log(imageFile, "right image too?");
-
-    const data = { title, subtitle, keyword, description, imageFile };
+    const formData = new FormData(form);
+    console.log(formData, "set Form Data, just checking purpose");
+    // Optional: validate fields if needed
+    const image = formData.get("image") as File;
+    if (!image || image.size === 0) {
+      console.log("No image selected");
+      return;
+    }
 
     try {
-      const res = await axios.post("/dashboard/blog/api", data, {
+      const res = await axios.post("/dashboard/blog/api", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
+
       console.log(res.data);
     } catch (error) {
-      console.error("Upload failed", error);
+      console.error("Upload failed:", error);
     }
   };
 
@@ -55,7 +48,7 @@ const Blog = () => {
           <input
             className="w-full border-gray-300 border-[2px] rounded-sm p-[0.3vmax]"
             type="text"
-            name="subTitle"
+            name="subtitle"
             placeholder="enter blog subtitle"
           />
         </div>
@@ -68,6 +61,7 @@ const Blog = () => {
           />
           <input
             accept="image/webp,image/avif"
+            onChange={(event) => setFile(event.target.files[0])}
             className="w-full border-gray-300 border-[2px] rounded-sm p-[0.3vmax]"
             type="file"
             name="image"

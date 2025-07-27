@@ -8,7 +8,14 @@ export async function POST(req: Request) {
     const { title, subtitle, description, keyword, image } = await req.json();
     await dbConnect();
     if (image) {
-      console.log(image, "image peyechi go bhai");
+      console.log(
+        title,
+        subtitle,
+        description,
+        keyword,
+        image,
+        "image peyechi go bhai"
+      );
     }
     if (title && subtitle && description && keyword && image) {
       const result = await new Blog({
