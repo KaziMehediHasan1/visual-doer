@@ -2,31 +2,35 @@
 import { Button } from "@/components/ui/button";
 import { FormEvent } from "react";
 import axios from "axios";
+import uploadToCloudinary from "@/hooks/useUploadCloudinary";
 const Blog = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    console.log(formData, "set Form Data, just checking purpose");
-    // Optional: validate fields if needed
-    const image = formData.get("image") as File;
-    if (!image || image.size === 0) {
-      console.log("No image selected");
-      return;
-    }
+    const form = e.target as HTMLFormElement;
+    const title = (form.elements.namedItem("title") as HTMLInputElement).value;
+    const subtitle = form.subtitle.value;
+    const tag = form.tag.value;
+    const description = form.description.value;
+    const file = form.image.files?.[0];
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("subtitle", subtitle);
+    formData.append("tag", tag);
+    formData.append("description", description);
+    const imageURL = await uploadToCloudinary(file);
+    console.log(imageURL, "check upload image");
+    // try {
+    //   const res = await axios.post("/dashboard/blog/api", formData, {
+    //     headers: {
+    //       "Content-Type": "multipart/form-data",
+    //     },
+    //   });
 
-    try {
-      const res = await axios.post("/dashboard/blog/api", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-
-      console.log(res.data);
-    } catch (error) {
-      console.error("Upload failed:", error);
-    }
+    //   console.log(res.data);
+    // } catch (error) {
+    //   console.error("Upload failed:", error);
+    // }
   };
 
   return (
@@ -61,7 +65,6 @@ const Blog = () => {
           />
           <input
             accept="image/webp,image/avif"
-            onChange={(event) => setFile(event.target.files[0])}
             className="w-full border-gray-300 border-[2px] rounded-sm p-[0.3vmax]"
             type="file"
             name="image"
