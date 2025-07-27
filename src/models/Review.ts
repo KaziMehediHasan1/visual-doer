@@ -6,6 +6,7 @@ interface IReview extends Document {
   clientName: string;
   designation: string;
   company: string;
+  companyImage: string;
 }
 
 export const ReviewSchema = new Schema<IReview>(
@@ -28,7 +29,9 @@ export const ReviewSchema = new Schema<IReview>(
     },
     company: {
       type: String,
-      required: true,
+    },
+    companyImage: {
+      type: String,
     },
   },
   { timestamps: true }

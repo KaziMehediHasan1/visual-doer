@@ -9,8 +9,8 @@ const uploadToCloudinary = async (file: File): Promise<string> => {
     "https://api.cloudinary.com/v1_1/dtq24zm2t/image/upload",
     formData
   );
-console.log(res,"res paichi?")
-  return res.data.secure_url;
+  console.log(res, "res paichi?");
+  return res?.data?.secure_url;
 };
 
 export default uploadToCloudinary;

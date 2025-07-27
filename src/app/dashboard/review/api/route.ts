@@ -5,16 +5,23 @@ import Review from "@/models/Review";
 // REVIEW CREATE
 export async function POST(req: Request) {
   try {
-    const { review, totalReview, clientName, designation, company } =
-      await req.json();
+    const {
+      review,
+      totalReview,
+      clientName,
+      designation,
+      company,
+      companyImage,
+    } = await req.json();
     await dbConnect();
-    if (review && totalReview && clientName && designation && company) {
+    if (review && totalReview && clientName && designation && companyImage ) {
       const result = await new Review({
         review,
         totalReview,
         clientName,
         designation,
         company,
+        companyImage ,
       });
       await result.save();
       if (result) {

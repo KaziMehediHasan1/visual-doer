@@ -1,34 +1,40 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { FormEvent, useEffect } from "react";
-import { toast } from "sonner";
+import uploadFormData from "@/hooks/uploadFormData";
+import uploadToCloudinary from "@/hooks/useUploadCloudinary";
+import { LoaderCircle } from "lucide-react";
+import { FormEvent, useState } from "react";
 
 const Review = () => {
-  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+  const [loader, setLoader] = useState<boolean>(false);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+    const form = e.target as HTMLFormElement;
+    const review = (form.elements.namedItem("review") as HTMLInputElement)
+      .value;
+    const totalReview = form.totalReview.value;
+    const clientName = form.clientName.value;
+    const designation = form.designation.value;
+    const company = form.company.value;
+    const companyImage = form.companyImage.files?.[0];
+    console.log(companyImage, "companyImage");
+    setLoader(true);
+    const imageUrl = await uploadToCloudinary(companyImage);
+    if (imageUrl) {
+      const data = {
+        review,
+        totalReview,
+        clientName,
+        designation,
+        company,
+        companyImage: imageUrl,
+      };
 
-    const data = {
-      review: formData.get("review") as string,
-      totalReview: formData.get("totalReview") as string,
-      clientName: formData.get("clientName") as string,
-      designation: formData.get("designation") as string,
-      company: formData.get("company") as string,
-    };
-
-    if (
-      data.review &&
-      data.totalReview &&
-      data.clientName &&
-      data.designation &&
-      data.company
-    ) {
-      toast("Review added successfully 🎉");
-    } else {
-      toast("Please fill out all fields 🫠");
+      await uploadFormData({ data, url: "/dashboard/review/api", setLoader });
     }
-    console.log(data, "✅ blog form data");
+    setLoader(false);
+    form.reset();
   };
   return (
     <div className="text-white px-4 py-3 space-y-4">
@@ -44,13 +50,13 @@ const Review = () => {
             className="w-full border-gray-300 border-[2px] rounded-sm p-[0.3vmax]"
             type="text"
             name="review"
-            placeholder="enter review"
+            placeholder="Enter review"
           />
           <input
             className="w-full border-gray-300 border-[2px] rounded-sm p-[0.3vmax]"
             type="number"
             name="totalReview"
-            placeholder="enter total-reviews"
+            placeholder="Enter total-reviews"
           />
         </div>
         <div className="flex items-center gap-3">
@@ -58,26 +64,36 @@ const Review = () => {
             className="w-full border-gray-300 border-[2px] rounded-sm p-[0.3vmax]"
             type="text"
             name="clientName"
-            placeholder="enter client-Name"
+            placeholder="Enter client-Name"
           />
           <input
-            accept="image/webp,image/avif"
             className="w-full border-gray-300 border-[2px] rounded-sm p-[0.3vmax]"
             type="text"
             name="designation"
-            placeholder="enter designation"
+            placeholder="Enter designation"
           />
         </div>
-        <div className="w-full">
+        <div className="flex items-center gap-3">
           <input
             className="w-full border-gray-300 border-[2px] rounded-sm p-[0.3vmax]"
             type="text"
             name="company"
-            placeholder="enter company name"
+            placeholder="Enter company name (optional)"
+          />
+          <input
+            accept="image/webp,image/avif"
+            className="w-full border-gray-300 border-[2px] rounded-sm p-[0.3vmax]"
+            type="file"
+            name="companyImage"
+            placeholder="Enter blog image"
           />
         </div>
         <Button className="cursor-pointer" type="submit">
-          Submit
+          {loader ? (
+            <LoaderCircle className="animate-spin" />
+          ) : (
+            <span>Submit</span>
+          )}
         </Button>
       </form>
     </div>

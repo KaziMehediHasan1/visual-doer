@@ -1,7 +1,6 @@
 "use client";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { toast } from "sonner";
-
 type ReactHook = (state: boolean) => void;
 
 const uploadFormData = async <T,>({
@@ -26,7 +25,8 @@ const uploadFormData = async <T,>({
     }
     return res.data;
   } catch (error) {
-    console.error("Upload failed:", error);
+    const err = error as AxiosError<{ message: string }>;
+    toast.error(err.response?.data?.message || "Something went wrong");
     setLoader(false);
     return { error };
   } finally {
