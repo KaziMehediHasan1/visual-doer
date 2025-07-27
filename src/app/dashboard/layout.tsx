@@ -7,7 +7,7 @@ const DashboardLayout = ({
   return (
     <SidebarProvider>
       <DashboardSidebar />
-      <main className="w-full bg-blue-950/30">
+      <main className="w-full bg-blue-950/30 font-normal">
       <SidebarTrigger className="hover:bg-gray-200 hover:rounded-lg text-white"/>
           {children}
       </main>

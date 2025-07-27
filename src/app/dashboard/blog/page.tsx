@@ -1,36 +1,35 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { FormEvent } from "react";
-import axios from "axios";
+import { FormEvent, useState } from "react";
 import uploadToCloudinary from "@/hooks/useUploadCloudinary";
+
+import { LoaderCircle } from "lucide-react";
+import uploadFormData from "@/hooks/uploadFormData ";
 const Blog = () => {
+  const [loader, setLoader] = useState<boolean>(false);
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     const form = e.target as HTMLFormElement;
     const title = (form.elements.namedItem("title") as HTMLInputElement).value;
     const subtitle = form.subtitle.value;
-    const tag = form.tag.value;
+    const keyword = form.tag.value;
     const description = form.description.value;
     const file = form.image.files?.[0];
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("subtitle", subtitle);
-    formData.append("tag", tag);
-    formData.append("description", description);
-    const imageURL = await uploadToCloudinary(file);
-    console.log(imageURL, "check upload image");
-    // try {
-    //   const res = await axios.post("/dashboard/blog/api", formData, {
-    //     headers: {
-    //       "Content-Type": "multipart/form-data",
-    //     },
-    //   });
+    setLoader(true);
+    const imageUrl = await uploadToCloudinary(file);
+    if (imageUrl) {
+      const data = {
+        title,
+        subtitle,
+        keyword,
+        description,
+        image: imageUrl,
+      };
 
-    //   console.log(res.data);
-    // } catch (error) {
-    //   console.error("Upload failed:", error);
-    // }
+      await uploadFormData({ data, url: "/dashboard/blog/api", setLoader });
+    }
+    setLoader(false);
+    console.log(loader, "loader dekho");
   };
 
   return (
@@ -61,7 +60,7 @@ const Blog = () => {
             className="w-full border-gray-300 border-[2px] rounded-sm p-[0.3vmax]"
             type="text"
             name="tag"
-            placeholder="enter blog title"
+            placeholder="enter blog tags"
           />
           <input
             accept="image/webp,image/avif"
@@ -79,7 +78,7 @@ const Blog = () => {
           ></textarea>
         </div>
         <Button className="cursor-pointer" type="submit">
-          Submit
+          {loader ? <LoaderCircle className="animate-spin"/> : <span>Submit</span>}
         </Button>
       </form>
     </div>
