@@ -18,7 +18,6 @@ const Review = () => {
     const designation = form.designation.value;
     const company = form.company.value;
     const companyImage = form.companyImage.files?.[0];
-    console.log(companyImage, "companyImage");
     setLoader(true);
     const imageUrl = await uploadToCloudinary(companyImage);
     if (imageUrl) {
