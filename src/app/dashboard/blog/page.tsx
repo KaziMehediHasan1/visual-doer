@@ -5,7 +5,7 @@ import uploadToCloudinary from "@/hooks/useUploadCloudinary";
 import { LoaderCircle } from "lucide-react";
 import uploadFormData from "@/hooks/uploadFormData";
 import TagInput from "@/components/reuse/TagInput";
-import CommonTable from "@/components/blog/CommonTable";
+import BlogTable from "@/components/blog/BlogTable";
 
 const Blog = () => {
   const [loader, setLoader] = useState<boolean>(false);
@@ -98,7 +98,7 @@ const Blog = () => {
         <h1 className="font-semibold text-[2vmax] text-center bg-primary-100 text-black p-1 rounded-sm">
           Blog Table
         </h1>
-        <CommonTable />
+        <BlogTable />
       </section>
     </div>
   );

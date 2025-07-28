@@ -46,7 +46,7 @@ const BlogTable = () => {
     };
 
     fetchData();
-  }, []);
+  }, [blogs]);
   const handleDelete = async (id: string) => {
     const res = await deleteData({
       url:  `/dashboard/blog/api?id=${id}`,
