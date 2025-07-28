@@ -5,7 +5,7 @@ import uploadToCloudinary from "@/hooks/useUploadCloudinary";
 import { LoaderCircle } from "lucide-react";
 import uploadFormData from "@/hooks/uploadFormData";
 import TagInput from "@/components/reuse/TagInput";
-import CommonTable from "@/components/reuse/CommonTable";
+import CommonTable from "@/components/blog/CommonTable";
 
 const Blog = () => {
   const [loader, setLoader] = useState<boolean>(false);

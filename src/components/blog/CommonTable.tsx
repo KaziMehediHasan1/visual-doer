@@ -6,10 +6,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import deleteData from "@/hooks/deleteData";
 import getData from "@/hooks/getData";
 import { DeleteIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-
 
 type BlogItem = {
   _id: string;
@@ -29,7 +29,7 @@ function isBlogResponse(res: any): res is BlogResponse {
   return res && Array.isArray(res.data);
 }
 
-const CommonTable = () => {
+const BlogTable = () => {
   const [loader, setLoader] = useState<boolean>(false);
   const [blogs, setBlogs] = useState<BlogItem[]>([]);
 
@@ -47,9 +47,19 @@ const CommonTable = () => {
 
     fetchData();
   }, []);
-  const handleDelete = (id: string) => {
-    console.log(id, "check id ");
+  const handleDelete = async (id: string) => {
+    const res = await deleteData({
+      url:  `/dashboard/blog/api?id=${id}`,
+      setLoader,
+    });
+
+    if (!res.error) {
+      setBlogs((prev) => prev.filter((blog) => blog._id !== id));
+    } else {
+      console.error("Delete failed:", res.error);
+    }
   };
+
   console.log(loader, blogs, "check-loader");
   return (
     <Table className="overflow-y-auto h-fit">
@@ -70,20 +80,23 @@ const CommonTable = () => {
             <TableCell className="font-medium text-center">
               {blog?.title}
             </TableCell>
-            <TableCell className="font-medium text-center"> {new Date(blog.createdAt!).toLocaleDateString()}</TableCell>
+            <TableCell className="font-medium text-center">
+              {" "}
+              {new Date(blog.createdAt!).toLocaleDateString()}
+            </TableCell>
 
-            <button
-              onClick={() => handleDelete(blog?._id)}
-              className="flex items-center w-fit mx-auto flex-col cursor-pointer"
-            >
-              <TableCell>
-                <DeleteIcon className="font-medium text-center" />
-              </TableCell>
-            </button>
+            <TableCell className="text-center">
+              <button
+                onClick={() => handleDelete(blog._id)}
+                className="flex items-center justify-center w-full cursor-pointer"
+              >
+                <DeleteIcon />
+              </button>
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
     </Table>
   );
 };
-export default CommonTable;
+export default BlogTable;
