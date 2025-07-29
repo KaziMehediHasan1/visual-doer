@@ -10,12 +10,12 @@ const SkillSchema = new Schema<ISkillSchema>(
     title: {
       type: String,
       required: true,
-      min: 4,
+      
     },
     description: {
       type: String,
       required: true,
-      min: 10,
+      
     },
     keyword: {
       type: [String],
