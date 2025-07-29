@@ -32,7 +32,8 @@ export async function POST(req: Request) {
 export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
-    const limit = parseInt(searchParams.get("limit") || "3");
+    const limitStr = searchParams.get("limit");
+    const limit = parseInt(limitStr ?? "");
     const lastid = searchParams.get("lastid");
     const query = lastid ? { _id: { $lt: lastid } } : {};
     await dbConnect();

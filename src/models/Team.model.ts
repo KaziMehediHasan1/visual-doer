@@ -19,7 +19,7 @@ export const TeamSchema = new Schema<ITeamSchema>({
     type: String,
     required: true,
   },
-});
+},{ timestamps: true });
 
 const Team = models.Team || model<ITeamSchema>("Team", TeamSchema);
 export default Team;

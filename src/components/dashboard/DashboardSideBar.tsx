@@ -64,7 +64,7 @@ const items = [
   },
   {
     title: "Team",
-    url: "/dashboard/Team",
+    url: "/dashboard/team",
     icon: UserPen,
   },
 ];

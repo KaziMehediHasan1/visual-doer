@@ -22,7 +22,7 @@ export const TalkingSchema = new Schema<ITalking>({
   },
   projectType: { type: String, required: true },
   projectDetails: { type: String, required: true },
-});
+},{ timestamps: true });
 
 const Talk = models.Talk || model<ITalking>("Talk", TalkingSchema);
 export default Talk;

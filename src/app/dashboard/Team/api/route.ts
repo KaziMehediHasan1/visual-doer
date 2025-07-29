@@ -6,6 +6,7 @@ import Team from "@/models/Team.model";
 export async function POST(req: Request) {
   try {
     const { image, name, designation } = await req.json();
+    console.log(image,name,designation,"api dataa ssJ")
     await dbConnect();
     if (image && name && designation) {
       const result = await new Team({ image, name, designation });

@@ -74,32 +74,40 @@ const SkillTable = () => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {skills?.map((skill, index) => (
-          <TableRow key={index}>
-            <TableCell className="font-medium text-center">
-              {index + 1}
-            </TableCell>
-            <TableCell className="font-medium text-center">
-              {skill?.title}
-            </TableCell>
-            <TableCell className="font-medium text-center">
-              {skill?.description}
-            </TableCell>
-            <TableCell className="font-medium text-center">
-              {" "}
-              {new Date(skill.createdAt!).toLocaleDateString()}
-            </TableCell>
+        {loader ? (
+          <p className="text-white font-semibold text-2xl text-center my-5">
+            Loading...
+          </p>
+        ) : (
+          <>
+            {skills?.map((skill, index) => (
+              <TableRow key={index}>
+                <TableCell className="font-medium text-center">
+                  {index + 1}
+                </TableCell>
+                <TableCell className="font-medium text-center">
+                  {skill?.title}
+                </TableCell>
+                <TableCell className="font-medium text-center">
+                  {skill?.description}
+                </TableCell>
+                <TableCell className="font-medium text-center">
+                  {" "}
+                  {new Date(skill.createdAt!).toLocaleDateString()}
+                </TableCell>
 
-            <TableCell className="text-center">
-              <button
-                onClick={() => handleDelete(skill._id)}
-                className="flex items-center justify-center w-full cursor-pointer"
-              >
-                <DeleteIcon />
-              </button>
-            </TableCell>
-          </TableRow>
-        ))}
+                <TableCell className="text-center">
+                  <button
+                    onClick={() => handleDelete(skill._id)}
+                    className="flex items-center justify-center w-full cursor-pointer"
+                  >
+                    <DeleteIcon />
+                  </button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </>
+        )}
       </TableBody>
     </Table>
   );

@@ -17,8 +17,8 @@ const deleteData = async ({
         "Content-Type": "application/json",
       },
     });
-    toast.success("Blog Deleted Succssfully");
-    console.log(res.data, "get data");
+    toast.success(res?.data?.message);
+
     return res.data;
   } catch (error) {
     setLoader(false);

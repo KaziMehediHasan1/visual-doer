@@ -49,7 +49,7 @@ const BlogTable = () => {
   }, []);
   const handleDelete = async (id: string) => {
     const res = await deleteData({
-      url:  `/dashboard/blog/api?id=${id}`,
+      url: `/dashboard/blog/api?id=${id}`,
       setLoader,
     });
 
@@ -72,29 +72,35 @@ const BlogTable = () => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {blogs?.map((blog, index) => (
-          <TableRow key={index}>
-            <TableCell className="font-medium text-center">
-              {index + 1}
-            </TableCell>
-            <TableCell className="font-medium text-center">
-              {blog?.title}
-            </TableCell>
-            <TableCell className="font-medium text-center">
-              {" "}
-              {new Date(blog.createdAt!).toLocaleDateString()}
-            </TableCell>
+        {loader ? (
+          <p className="text-white font-semibold text-2xl text-center my-5">Loading...</p>
+        ) : (
+          <>
+            {blogs?.map((blog, index) => (
+              <TableRow key={index}>
+                <TableCell className="font-medium text-center">
+                  {index + 1}
+                </TableCell>
+                <TableCell className="font-medium text-center">
+                  {blog?.title}
+                </TableCell>
+                <TableCell className="font-medium text-center">
+                  {" "}
+                  {new Date(blog.createdAt!).toLocaleDateString()}
+                </TableCell>
 
-            <TableCell className="text-center">
-              <button
-                onClick={() => handleDelete(blog._id)}
-                className="flex items-center justify-center w-full cursor-pointer"
-              >
-                <DeleteIcon />
-              </button>
-            </TableCell>
-          </TableRow>
-        ))}
+                <TableCell className="text-center">
+                  <button
+                    onClick={() => handleDelete(blog._id)}
+                    className="flex items-center justify-center w-full cursor-pointer"
+                  >
+                    <DeleteIcon />
+                  </button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </>
+        )}
       </TableBody>
     </Table>
   );

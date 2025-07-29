@@ -73,32 +73,40 @@ const FaqTable = () => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {faqs?.map((faq, index) => (
-          <TableRow key={index}>
-            <TableCell className="font-medium text-center">
-              {index + 1}
-            </TableCell>
-            <TableCell className="font-medium text-center">
-              {faq?.question}
-            </TableCell>
-            <TableCell className="font-medium text-center">
-              {faq?.answer}
-            </TableCell>
-            <TableCell className="font-medium text-center">
-              {" "}
-              {new Date(faq.createdAt!).toLocaleDateString()}
-            </TableCell>
+        {loader ? (
+          <p className="text-white font-semibold text-2xl text-center my-5">
+            Loading...
+          </p>
+        ) : (
+          <>
+            {faqs?.map((faq, index) => (
+              <TableRow key={index}>
+                <TableCell className="font-medium text-center">
+                  {index + 1}
+                </TableCell>
+                <TableCell className="font-medium text-center">
+                  {faq?.question}
+                </TableCell>
+                <TableCell className="font-medium text-center">
+                  {faq?.answer}
+                </TableCell>
+                <TableCell className="font-medium text-center">
+                  {" "}
+                  {new Date(faq.createdAt!).toLocaleDateString()}
+                </TableCell>
 
-            <TableCell className="text-center">
-              <button
-                onClick={() => handleDelete(faq._id)}
-                className="flex items-center justify-center w-full cursor-pointer"
-              >
-                <DeleteIcon />
-              </button>
-            </TableCell>
-          </TableRow>
-        ))}
+                <TableCell className="text-center">
+                  <button
+                    onClick={() => handleDelete(faq._id)}
+                    className="flex items-center justify-center w-full cursor-pointer"
+                  >
+                    <DeleteIcon />
+                  </button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </>
+        )}
       </TableBody>
     </Table>
   );

@@ -33,7 +33,7 @@ function isBlogResponse(res: any): res is BlogResponse {
 }
 
 const ReviewTable = () => {
-   const [loader, setLoader] = useState(false);
+  const [loader, setLoader] = useState(false);
   const [review, setReview] = useState<BlogItem[]>([]);
 
   const fetchData = async () => {
@@ -75,37 +75,46 @@ const ReviewTable = () => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {review?.map((reviews, index) => (
-          <TableRow key={index}>
-            <TableCell className="font-medium text-center">
-              {index + 1}
-            </TableCell>
-            <TableCell className="font-medium text-center">
-              {reviews?.company}
-            </TableCell>
-            <TableCell className="font-medium text-center">
-              {" "}
-              {reviews.clientName}
-            </TableCell>
-            <TableCell className="font-medium text-center">
-              {" "}
-              {reviews.designation}
-            </TableCell>
-            <TableCell className="font-medium text-center">
-              {" "}
-              {new Date(reviews.createdAt!).toLocaleDateString()}
-            </TableCell>
+        {loader ? (
+          <p className="text-white font-semibold text-2xl text-center my-5">
+            Loading...
+          </p>
+        ) : (
+          <>
+            {" "}
+            {review?.map((reviews, index) => (
+              <TableRow key={index}>
+                <TableCell className="font-medium text-center">
+                  {index + 1}
+                </TableCell>
+                <TableCell className="font-medium text-center">
+                  {reviews?.company}
+                </TableCell>
+                <TableCell className="font-medium text-center">
+                  {" "}
+                  {reviews.clientName}
+                </TableCell>
+                <TableCell className="font-medium text-center">
+                  {" "}
+                  {reviews.designation}
+                </TableCell>
+                <TableCell className="font-medium text-center">
+                  {" "}
+                  {new Date(reviews.createdAt!).toLocaleDateString()}
+                </TableCell>
 
-            <TableCell className="text-center">
-              <button
-                onClick={() => handleDelete(reviews._id)}
-                className="flex items-center justify-center w-full cursor-pointer"
-              >
-                <DeleteIcon />
-              </button>
-            </TableCell>
-          </TableRow>
-        ))}
+                <TableCell className="text-center">
+                  <button
+                    onClick={() => handleDelete(reviews._id)}
+                    className="flex items-center justify-center w-full cursor-pointer"
+                  >
+                    <DeleteIcon />
+                  </button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </>
+        )}
       </TableBody>
     </Table>
   );
