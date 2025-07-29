@@ -13,7 +13,10 @@ import { useEffect, useState } from "react";
 
 type BlogItem = {
   _id: string;
-  title: string;
+  company: string;
+  totalReview: number;
+  designation: string;
+  clientName: string;
   createdAt?: string;
 };
 
@@ -30,35 +33,35 @@ function isBlogResponse(res: any): res is BlogResponse {
 }
 
 const ReviewTable = () => {
-  const [loader, setLoader] = useState<boolean>(false);
-  const [blogs, setBlogs] = useState<BlogItem[]>([]);
+   const [loader, setLoader] = useState(false);
+  const [review, setReview] = useState<BlogItem[]>([]);
+
+  const fetchData = async () => {
+    setLoader(true);
+    const res = await getData({ url: "/dashboard/review/api", setLoader });
+    if (isBlogResponse(res)) {
+      setReview(res.data);
+    }
+    setLoader(false);
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      setLoader(true);
-      const res = await getData({ url: "/dashboard/review/api", setLoader });
-      if (isBlogResponse(res)) {
-        setBlogs(res.data);
-      }
-      setLoader(false);
-    };
-
     fetchData();
-  }, [blogs]);
+  }, []);
+
   const handleDelete = async (id: string) => {
     const res = await deleteData({
-      url:  `/dashboard/review/api?id=${id}`,
+      url: `/dashboard/review/api?id=${id}`,
       setLoader,
     });
 
     if (!res.error) {
-      setBlogs((prev) => prev.filter((blog) => blog._id !== id));
+      setReview((prev) => prev.filter((blog) => blog._id !== id));
+      // or await fetchData();
     } else {
       console.error("Delete failed:", res.error);
     }
   };
-
-  console.log(loader, blogs, "check-loader");
   return (
     <Table className="overflow-y-auto h-fit">
       <TableHeader>
@@ -72,30 +75,30 @@ const ReviewTable = () => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {blogs?.map((blog, index) => (
+        {review?.map((reviews, index) => (
           <TableRow key={index}>
             <TableCell className="font-medium text-center">
               {index + 1}
             </TableCell>
             <TableCell className="font-medium text-center">
-              {blog?.title}
+              {reviews?.company}
             </TableCell>
             <TableCell className="font-medium text-center">
               {" "}
-              {new Date(blog.createdAt!).toLocaleDateString()}
+              {reviews.clientName}
             </TableCell>
             <TableCell className="font-medium text-center">
               {" "}
-              {new Date(blog.createdAt!).toLocaleDateString()}
+              {reviews.designation}
             </TableCell>
             <TableCell className="font-medium text-center">
               {" "}
-              {new Date(blog.createdAt!).toLocaleDateString()}
+              {new Date(reviews.createdAt!).toLocaleDateString()}
             </TableCell>
 
             <TableCell className="text-center">
               <button
-                onClick={() => handleDelete(blog._id)}
+                onClick={() => handleDelete(reviews._id)}
                 className="flex items-center justify-center w-full cursor-pointer"
               >
                 <DeleteIcon />
