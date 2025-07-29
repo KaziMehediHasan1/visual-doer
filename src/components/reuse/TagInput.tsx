@@ -51,7 +51,7 @@ const TagInput = ({ tags, setTags }: TagInputProps) => {
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={handleKeyDown}
         className="w-full border-gray-300 border-[2px] rounded-sm p-[0.3vmax]"
-        placeholder="Enter blog related keyword"
+        placeholder="Enter related keyword"
       />
     </div>
   );

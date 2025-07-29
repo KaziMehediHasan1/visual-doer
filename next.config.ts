@@ -2,8 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  experimental: {
-    turbo: false, // ✅ explicitly turn off Turbopack
+  images: {
+    domains: ["res.cloudinary.com"],
   },
   webpack(config) {
     config.module.rules.push({
