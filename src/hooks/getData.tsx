@@ -16,7 +16,6 @@ const getData = async ({
         "Content-Type": "application/json",
       },
     });
-    console.log(res.data, "get data");
     return res.data;
   } catch (error) {
     setLoader(false);
