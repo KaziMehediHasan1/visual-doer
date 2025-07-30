@@ -18,13 +18,16 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   const pathname = usePathname();
-  const HideNavAndFooter = pathname?.startsWith("/dashboard");
+  const HideNavAndFooter = ["/dashboard", "/login", "/register"].some((path) =>
+    pathname?.startsWith(path)
+  );
+
   return (
     <html lang="en" className={`${sora.variable}`}>
       <body className="antialiased bg-primaryBG">
         {!HideNavAndFooter && <Navbar />}
         {children}
-        <Toaster position="top-center"/>
+        <Toaster position="top-center" />
         {!HideNavAndFooter && <Footer />}
       </body>
     </html>
