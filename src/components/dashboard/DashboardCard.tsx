@@ -42,7 +42,7 @@ const DashboardCard = ({ title, endpoint, render }: Props) => {
   console.log(data, "dataaaaaaaaaa");
 
   return (
-    <div className="w-[90vw] sm:w-[300px] p-4 bg-primary-500 text-white rounded-md shadow-md">
+    <div className="w-full p-4 bg-primary-500 text-white rounded-md shadow-md">
       <p className="text-lg font-semibold mb-1">{title}</p>
       {loading ? <p>Loading...</p> : <div>{render(data)}</div>}
     </div>

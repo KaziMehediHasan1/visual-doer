@@ -4,7 +4,7 @@ import DashboardCard from "@/components/dashboard/DashboardCard";
 const Dashboard = () => {
   return (
     <div className="w-full text-white px-4 py-3">
-      <section className="grid lg:grid-cols-3 sm:grid-cols-2 gap-x-4 gap-y-6">
+      <section className="grid lg:grid-cols-3 sm:grid-cols-2 gap-x-4 gap-y-6 w-full">
         <DashboardCard
           title="Blog Stats"
           endpoint="/dashboard/blog/api"
@@ -50,6 +50,32 @@ const Dashboard = () => {
           render={(data) => (
             <>
               <p className="text-sm">Total Team Member</p>
+              <div className="flex items-center justify-between">
+                <p>Total: {data?.total}</p>
+                <h1>{data?.length}</h1>
+              </div>
+            </>
+          )}
+        />
+        <DashboardCard
+          title="Our Services"
+          endpoint="/dashboard/skills/api"
+          render={(data) => (
+            <>
+              <p className="text-sm">Total Services</p>
+              <div className="flex items-center justify-between">
+                <p>Total: {data?.total}</p>
+                <h1>{data?.length}</h1>
+              </div>
+            </>
+          )}
+        />
+        <DashboardCard
+          title="Total FAQs"
+          endpoint="/dashboard/faq/api"
+          render={(data) => (
+            <>
+              <p className="text-sm">Total FAQs</p>
               <div className="flex items-center justify-between">
                 <p>Total: {data?.total}</p>
                 <h1>{data?.length}</h1>
