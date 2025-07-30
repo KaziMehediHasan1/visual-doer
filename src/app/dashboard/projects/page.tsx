@@ -23,7 +23,7 @@ const Project = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const uploadPromises = files.map((file: any) => uploadToCloudinary(file));
     const imageUrl = await Promise.all(uploadPromises);
-    console.log(imageUrl, "dekhic");
+    // console.log(imageUrl, "dekhic");
     if (imageUrl) {
       const data = {
         title,

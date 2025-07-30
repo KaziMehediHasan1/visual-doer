@@ -61,7 +61,7 @@ const SkillTable = () => {
     }
   };
 
-  console.log(loader, skills, "check-loader");
+  // console.log(loader, skills, "check-loader");
   return (
     <Table className="overflow-y-auto h-fit">
       <TableHeader>

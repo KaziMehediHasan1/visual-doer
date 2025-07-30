@@ -60,7 +60,7 @@ const FaqTable = () => {
     }
   };
 
-  console.log(loader, faqs, "check-loader");
+  // console.log(loader, faqs, "check-loader");
   return (
     <Table className="overflow-y-auto h-fit">
       <TableHeader>

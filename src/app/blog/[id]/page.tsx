@@ -5,14 +5,14 @@ import CommonTitle from "@/components/reuse/CommonTitle";
 import CommonWrapper from "@/components/shared/CommonWrapper";
 import Image from "next/image";
 import EffectTwo from "@/assets/images/EffectTwo.png";
-import { useParams } from "next/navigation";
+// import { useParams } from "next/navigation";
 
 
 
 const BlogDetails = () => {
-  const {id} = useParams()
+  // const {id} = useParams()
   // const {id} = params;
-  console.log(id, "blog details id");
+  // console.log(id, "blog details id");
   return (
     <CommonWrapper>
       <div className="max-w-[80%] mx-auto mt-16 lg:mt-24">

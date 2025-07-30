@@ -20,7 +20,7 @@ const Skills = () => {
       description,
       keyword: tags,
     };
-    console.log(data,"dataa")
+    // console.log(data,"dataa")
     setLoader(true);
     if (data) {
       await uploadFormData({ data, url: "/dashboard/skills/api", setLoader });

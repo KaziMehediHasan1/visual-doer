@@ -62,7 +62,7 @@ const TeamTable = () => {
     }
   };
 
-  console.log(loader, teams, "check-loder, teams");
+  // console.log(loader, teams, "check-loder, teams");
   return (
     <Table className="overflow-y-auto max-h-[400px]">
       <TableHeader>

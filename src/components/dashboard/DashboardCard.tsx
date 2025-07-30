@@ -39,7 +39,7 @@ const DashboardCard = ({ title, endpoint, render }: Props) => {
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [endpoint]);
-  console.log(data, "dataaaaaaaaaa");
+  // console.log(data, "dataaaaaaaaaa");
 
   return (
     <div className="w-full p-4 bg-primary-500 text-white rounded-md shadow-md">

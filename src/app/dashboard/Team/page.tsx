@@ -24,7 +24,7 @@ const Team = () => {
         designation,
         image: imageUrl,
       };
-      console.log(data, "check data");
+      // console.log(data, "check data");
       await uploadFormData({ data, url: "/dashboard/team/api", setLoader });
     }
     setLoader(false);

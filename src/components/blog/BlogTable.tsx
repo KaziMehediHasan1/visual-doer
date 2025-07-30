@@ -60,7 +60,7 @@ const BlogTable = () => {
     }
   };
 
-  console.log(loader, blogs, "check-loader");
+  // console.log(loader, blogs, "check-loader");
   return (
     <Table className="overflow-y-auto h-fit">
       <TableHeader>

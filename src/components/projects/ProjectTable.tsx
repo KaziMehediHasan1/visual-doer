@@ -61,7 +61,7 @@ const ProjectTable = () => {
     }
   };
 
-  console.log(loader, projects, "check-loader");
+  // console.log(loader, projects, "check-loader");
   return (
     <Table className="overflow-y-auto h-fit">
       <TableHeader>
