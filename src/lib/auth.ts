@@ -8,7 +8,7 @@ interface ITokenPayload {
 const secret = process.env.NEXT_JWT_TOKEN_SECRET;
 
 export const SignToken = (payload: ITokenPayload) => {
-  return jwt.sign(payload, secret as string, { expiresIn: "1h" });
+  return jwt.sign(payload, secret as string, { expiresIn: "2h" });
 };
 
 export const verifyToken = (token: string) => {

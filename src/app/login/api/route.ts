@@ -3,6 +3,7 @@ import { SignToken } from "@/lib/auth";
 import { dbConnect } from "@/lib/mongodb";
 import User from "@/models/User.model";
 import bcrypt from "bcrypt";
+
 export async function POST(req: Request) {
   try {
     await dbConnect();
