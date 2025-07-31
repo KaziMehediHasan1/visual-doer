@@ -73,12 +73,13 @@ const BlogTable = () => {
       </TableHeader>
       <TableBody>
         {loader ? (
-          <TableCell>
-            {" "}
-            <p className="text-white font-semibold text-2xl text-center my-5">
-              Loading...
-            </p>
-          </TableCell>
+          <TableRow>
+            <TableCell>
+              <p className="text-white font-semibold text-2xl text-center my-5">
+                Loading...
+              </p>
+            </TableCell>
+          </TableRow>
         ) : (
           <>
             {blogs?.map((blog, index) => (
