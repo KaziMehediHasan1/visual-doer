@@ -85,7 +85,6 @@ const ReviewTable = () => {
           </TableRow>
         ) : (
           <>
-            {" "}
             {review?.map((reviews, index) => (
               <TableRow key={index}>
                 <TableCell className="font-medium text-center">
@@ -95,15 +94,12 @@ const ReviewTable = () => {
                   {reviews?.company}
                 </TableCell>
                 <TableCell className="font-medium text-center">
-                  {" "}
                   {reviews.clientName}
                 </TableCell>
                 <TableCell className="font-medium text-center">
-                  {" "}
                   {reviews.designation}
                 </TableCell>
                 <TableCell className="font-medium text-center">
-                  {" "}
                   {new Date(reviews.createdAt!).toLocaleDateString()}
                 </TableCell>
 
