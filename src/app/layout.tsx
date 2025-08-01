@@ -18,9 +18,12 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   const pathname = usePathname();
-  const HideNavAndFooter = ["/dashboard", "/login", "/register"].some((path) =>
-    pathname?.startsWith(path)
-  );
+  const HideNavAndFooter = [
+    "/dashboard",
+    "/login",
+    "/register",
+    "/forgot-password",
+  ].some((path) => pathname?.startsWith(path));
 
   return (
     <html lang="en" className={`${sora.variable}`}>

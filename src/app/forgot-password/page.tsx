@@ -1,13 +1,17 @@
 "use client";
+import { useRouter } from "next/navigation";
+import React, { FormEvent } from "react";
 
-import { FormEvent } from "react";
-
-const Login = () => {
+const ForgetPassword = () => {
+  const redirect = useRouter();
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
-    const email = form.email.value;
-    const password = form.password.value;
+    const email = form.newPassword.value;
+    const password = form.ConfirmPassword.value;
+    if (email && password) {
+      redirect.push("/login");
+    }
     console.log(email, password, "check mail and password");
   };
   return (
@@ -17,24 +21,24 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block mb-2 text-gray-50" htmlFor="email">
-              Email
+              New Password
             </label>
             <input
-              placeholder="Your Email"
+              placeholder="New Password"
               className="w-full p-2 border-b-2 border-primary-400 bg-transparent outline-none focus:border-b-2 focus:border-primary-600"
-              name="email"
-              type="email"
+              name="newPassword"
+              type="password"
             />
           </div>
           <div className="mb-4">
             <label className="block mb-2 text-gray-50" htmlFor="password">
-              Password
+              Confirm Password
             </label>
             <input
-              placeholder="Your Password"
+              placeholder="Confirm Password"
               className="w-full p-2 border-b-2 border-primary-400 bg-transparent outline-none focus:border-b-2 focus:border-primary-600"
               type="password"
-              name="password"
+              name="ConfirmPassword"
             />
           </div>
 
@@ -43,11 +47,8 @@ const Login = () => {
               className="w-full bg-primary-600 text-white font-semibold p-2 rounded transition-all hover:bg-primary-400 cursor-pointer"
               type="submit"
             >
-              Login
+              Submit
             </button>
-            <a className="text-sm hover:border-b-[1px]" href="/forgot-password">
-              Forgot Password?
-            </a>
           </div>
         </form>
       </div>
@@ -55,4 +56,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgetPassword;
