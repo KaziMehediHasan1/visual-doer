@@ -1,8 +1,10 @@
 "use client";
-
-import { FormEvent } from "react";
+import Link from "next/link";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
@@ -24,6 +26,10 @@ const Login = () => {
               className="w-full p-2 border-b-2 border-primary-400 bg-transparent outline-none focus:border-b-2 focus:border-primary-600"
               name="email"
               type="email"
+              value={email}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                setEmail(e.target.value)
+              }
             />
           </div>
           <div className="mb-4">
@@ -45,9 +51,12 @@ const Login = () => {
             >
               Login
             </button>
-            <a className="text-sm hover:border-b-[1px]" href="/forgot-password">
+            <Link
+              href="/forgot-password"
+              className="text-sm hover:border-b-[1px]"
+            >
               Forgot Password?
-            </a>
+            </Link>
           </div>
         </form>
       </div>

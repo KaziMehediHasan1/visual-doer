@@ -30,17 +30,6 @@ const ForgetPassword = () => {
               type="password"
             />
           </div>
-          <div className="mb-4">
-            <label className="block mb-2 text-gray-50" htmlFor="password">
-              Confirm Password
-            </label>
-            <input
-              placeholder="Confirm Password"
-              className="w-full p-2 border-b-2 border-primary-400 bg-transparent outline-none focus:border-b-2 focus:border-primary-600"
-              type="password"
-              name="ConfirmPassword"
-            />
-          </div>
 
           <div className="mb-4 space-y-3">
             <button
