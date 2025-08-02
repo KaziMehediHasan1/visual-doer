@@ -1,18 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
-import User from "@/models/User"; // mongoose model
-import sendEmail from "@/utils/sendEmail"; // nodemailer helper
+import User from "@/models/User.model";
+import { ApiResponse } from "@/hooks/apiResponse";
+import { sendEmail } from "@/lib/sendEmail";
 
 export async function POST(req: NextRequest) {
   const { email } = await req.json();
 
   const user = await User.findOne({ email });
   if (!user)
-    return NextResponse.json({ msg: "User not found" }, { status: 404 });
+    return ApiResponse({
+      message: "User not found",
+      status: 404,
+      success: false,
+    });
 
   const token = crypto.randomBytes(32).toString("hex");
   const hashed = crypto.createHash("sha256").update(token).digest("hex");
-
+  console.log(token, hashed);
   user.resetPasswordToken = hashed;
   user.resetPasswordExpire = Date.now() + 15 * 60 * 1000; // 15 mins
   await user.save();
@@ -25,5 +30,9 @@ export async function POST(req: NextRequest) {
     html: `<p>Click here to reset password: <a href="${resetUrl}">Reset</a></p>`,
   });
 
-  return NextResponse.json({ msg: "Reset link sent" });
+  return ApiResponse({
+    message: "Reset link sent",
+    status: 200,
+    success: true,
+  });
 }

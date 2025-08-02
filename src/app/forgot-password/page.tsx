@@ -7,12 +7,12 @@ const ForgetPassword = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
-    const email = form.newPassword.value;
-    const password = form.ConfirmPassword.value;
-    if (email && password) {
+    const email = form.email.value;
+   
+    if (email) {
       redirect.push("/login");
     }
-    console.log(email, password, "check mail and password");
+    console.log(email, "check mail and password");
   };
   return (
     <div className="text-white min-h-screen flex items-center justify-center">
