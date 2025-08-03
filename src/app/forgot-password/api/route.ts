@@ -4,7 +4,7 @@ import { ApiResponse } from "@/hooks/apiResponse";
 
 export async function POST(req: NextRequest) {
   const { email } = await req.json();
-
+  console.log(email, "check forgot mail find");
   const user = await User.findOne({ email });
   if (!user)
     return ApiResponse({

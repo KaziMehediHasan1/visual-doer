@@ -1,8 +1,9 @@
 "use client";
-import Link from "next/link";
+import uploadFormData from "@/hooks/uploadFormData";
 import { ChangeEvent, FormEvent, useState } from "react";
 
 const Login = () => {
+  const [loader, setLoader] = useState<boolean>(false);
   const [email, setEmail] = useState("");
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
@@ -11,6 +12,15 @@ const Login = () => {
     const password = form.password.value;
     console.log(email, password, "check mail and password");
   };
+  
+  const handleForgotPassword = async () => {
+    const email = process.env.NEXT_PUBLIC_ADMIN_MAIL;
+    console.log("check usermai: ", email);
+    if (email) {
+      await uploadFormData({ data: email, url: "/forgot-password", setLoader });
+    }
+  };
+
   return (
     <div className="text-white min-h-screen flex items-center justify-center">
       {/* <!-- From Uiverse.io by howaboutsalman -->  */}
@@ -50,12 +60,12 @@ const Login = () => {
             >
               Login
             </button>
-            <Link
-              href="/forgot-password"
+            <button
+              onClick={handleForgotPassword}
               className="text-sm hover:border-b-[1px]"
             >
               Forgot Password?
-            </Link>
+            </button>
           </div>
         </form>
       </div>
