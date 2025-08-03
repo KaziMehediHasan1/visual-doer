@@ -4,7 +4,6 @@ import { ChangeEvent, FormEvent, useState } from "react";
 
 const Login = () => {
   const [email, setEmail] = useState("");
-
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
