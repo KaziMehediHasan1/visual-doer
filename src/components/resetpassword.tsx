@@ -3,14 +3,10 @@ import uploadFormData from "@/hooks/uploadFormData";
 import { useRouter } from "next/navigation";
 import React, { FormEvent, useState } from "react";
 
-const ResetPassword = ({
-  searchParams,
-}: {
-  searchParams: { token?: string };
-}) => {
+const ResetPassword = ({ token }: { token?: string }) => {
+  console.log(token, "token ashuk");
   const redirect = useRouter();
   const [loader, setLoader] = useState<boolean>(false);
-  const token = searchParams?.token || undefined;
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
