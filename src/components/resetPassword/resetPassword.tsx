@@ -11,7 +11,6 @@ const ResetPassword = ({
   const redirect = useRouter();
   const [loader, setLoader] = useState<boolean>(false);
   const token = searchParams?.token || undefined;
-  console.log(token, "token geting");
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;

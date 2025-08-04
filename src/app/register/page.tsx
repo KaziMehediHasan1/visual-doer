@@ -7,9 +7,8 @@ const Register = () => {
       <div className="max-w-[360px] w-full mx-auto bg-[#0d1b2a] rounded-lg shadow-md p-4">
         <form>
           <div className="mb-4">
-            <label className="block mb-2 text-gray-50" for="name">
-              {" "}
-              Name{" "}
+            <label className="block mb-2 text-gray-50" htmlFor="name">
+              Name
             </label>
             <input
               placeholder="Your Name"
@@ -18,9 +17,8 @@ const Register = () => {
             />
           </div>
           <div className="mb-4">
-            <label className="block mb-2 text-gray-50" for="email">
-              {" "}
-              Email{" "}
+            <label className="block mb-2 text-gray-50" htmlFor="email">
+              Email
             </label>
             <input
               placeholder="Your Email"
@@ -31,9 +29,8 @@ const Register = () => {
             />
           </div>
           <div className="mb-4">
-            <label className="block mb-2 text-gray-50" for="message">
-              {" "}
-              Message{" "}
+            <label className="block mb-2 text-gray-50" htmlFor="message">
+              Message
             </label>
             <textarea
               placeholder="Your Message"

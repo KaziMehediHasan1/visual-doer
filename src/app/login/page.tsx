@@ -1,6 +1,7 @@
 "use client";
 import uploadFormData from "@/hooks/uploadFormData";
-import {  FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
+import { toast } from "sonner";
 
 const Login = () => {
   const [loader, setLoader] = useState<boolean>(false);
@@ -11,12 +12,16 @@ const Login = () => {
     const password = form.password.value;
     setLoader(true);
     if (email && password) {
-      const res = await uploadFormData({
+      const res = (await uploadFormData({
         data: { email, password },
         url: "/login/api",
         setLoader,
-      });
-      console.log(res, "check mail and password get db");
+      })) as {
+        message: string;
+        success: boolean;
+        status: number;
+      };
+      toast.success(res.message);
     }
   };
 
@@ -73,14 +78,14 @@ const Login = () => {
             >
               Login
             </button>
-            <button
-              onClick={handleForgotPassword}
-              className="text-sm hover:border-b-[1px] cursor-pointer"
-            >
-              Forgot Password?
-            </button>
           </div>
         </form>
+        <button
+          onClick={handleForgotPassword}
+          className="text-sm hover:border-b-[1px] cursor-pointer"
+        >
+          Forgot Password?
+        </button>
       </div>
     </div>
   );

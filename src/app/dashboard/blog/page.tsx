@@ -62,12 +62,6 @@ const Blog = () => {
             />
           </div>
           <div className="flex items-center gap-3">
-            {/* <input
-            className="w-full border-gray-300 border-[2px] rounded-sm p-[0.3vmax]"
-            type="text"
-            name="tag"
-            placeholder="Enter blog related tags"
-          /> */}
             <TagInput setTags={setTags} tags={tags} />
             <input
               accept="image/webp,image/avif"

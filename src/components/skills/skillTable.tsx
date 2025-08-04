@@ -12,6 +12,7 @@ import {
 } from "../ui/table";
 import { DeleteIcon } from "lucide-react";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 type FaqItem = {
   _id: string;
   title: string;
@@ -32,7 +33,7 @@ function isFaqResponse(res: any): res is ProjectResponse {
 }
 const SkillTable = () => {
   const [loader, setLoader] = useState<boolean>(false);
-  const [skills, setFaq] = useState<FaqItem[]>([]);
+  const [services, setServices] = useState<FaqItem[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,7 +41,7 @@ const SkillTable = () => {
       const res = await getData({ url: "/dashboard/skills/api", setLoader });
 
       if (isFaqResponse(res)) {
-        setFaq(res.data);
+        setServices(res.data);
       }
 
       setLoader(false);
@@ -48,20 +49,36 @@ const SkillTable = () => {
 
     fetchData();
   }, []);
+
   const handleDelete = async (id: string) => {
-    const res = await deleteData({
-      url: `/dashboard/skills/api?id=${id}`,
-      setLoader,
+    const result = await Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to undo this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "Cancel",
     });
 
-    if (!res.error) {
-      setFaq((prev) => prev.filter((faq) => faq._id !== id));
-    } else {
-      console.error("Delete failed:", res.error);
+    if (result.isConfirmed) {
+      setLoader(true);
+
+      const res = await deleteData({
+        url: `/dashboard/skills/api?id=${id}`,
+        setLoader,
+      });
+
+      if (!res.error) {
+        setServices((prev) => prev.filter((blog) => blog._id !== id));
+        Swal.fire("Deleted!", "Your item has been deleted.", "success");
+      } else {
+        Swal.fire("Error", "Something went wrong while deleting.", "error");
+        console.error("Delete failed:", res.error);
+      }
+
+      setLoader(false);
     }
   };
-
-  // console.log(loader, skills, "check-loader");
   return (
     <Table className="overflow-y-auto h-fit">
       <TableHeader>
@@ -84,7 +101,7 @@ const SkillTable = () => {
           </TableRow>
         ) : (
           <>
-            {skills?.map((skill, index) => (
+            {services?.map((skill, index) => (
               <TableRow key={index}>
                 <TableCell className="font-medium text-center">
                   {index + 1}

@@ -4,9 +4,7 @@ import {
   Home,
   Users,
   HandHeart,
-
   LayoutDashboard,
-
   CalendarDays,
   CircleDollarSign,
   FilePlus2,
@@ -58,7 +56,7 @@ const items = [
     icon: HandHeart,
   },
   {
-    title: "Skill",
+    title: "Services",
     url: "/dashboard/skills",
     icon: Users,
   },

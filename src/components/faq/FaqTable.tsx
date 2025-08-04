@@ -11,6 +11,7 @@ import {
   TableRow,
 } from "../ui/table";
 import { DeleteIcon } from "lucide-react";
+import Swal from "sweetalert2";
 type FaqItem = {
   _id: string;
   question: string;
@@ -47,20 +48,37 @@ const FaqTable = () => {
 
     fetchData();
   }, []);
+
   const handleDelete = async (id: string) => {
-    const res = await deleteData({
-      url: `/dashboard/faq/api?id=${id}`,
-      setLoader,
+    const result = await Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to undo this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "Cancel",
     });
 
-    if (!res.error) {
-      setFaq((prev) => prev.filter((faq) => faq._id !== id));
-    } else {
-      console.error("Delete failed:", res.error);
+    if (result.isConfirmed) {
+      setLoader(true);
+
+      const res = await deleteData({
+        url: `/dashboard/faq/api?id=${id}`,
+        setLoader,
+      });
+
+      if (!res.error) {
+        setFaq((prev) => prev.filter((blog) => blog._id !== id));
+        Swal.fire("Deleted!", "Your item has been deleted.", "success");
+      } else {
+        Swal.fire("Error", "Something went wrong while deleting.", "error");
+        console.error("Delete failed:", res.error);
+      }
+
+      setLoader(false);
     }
   };
 
-  // console.log(loader, faqs, "check-loader");
   return (
     <Table className="overflow-y-auto h-fit">
       <TableHeader>

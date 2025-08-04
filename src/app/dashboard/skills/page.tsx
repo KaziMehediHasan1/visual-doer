@@ -29,13 +29,12 @@ const Skills = () => {
     form.reset();
     setTags([]);
   };
-  
 
   return (
     <div className="text-white px-4 py-3 space-y-10">
       <section className="text-white  space-y-4">
         <h1 className="font-semibold text-[2vmax] text-center bg-primary-100 text-black p-1 rounded-sm">
-          Add a Skill
+          Add a Services
         </h1>
         <form
           onSubmit={handleSubmit}
@@ -70,7 +69,7 @@ const Skills = () => {
 
       <section className="text-white  space-y-4">
         <h1 className="font-semibold text-[2vmax] text-center bg-primary-100 text-black p-1 rounded-sm">
-          Skill Table
+          Services Table
         </h1>
         <SkillTable />
       </section>
