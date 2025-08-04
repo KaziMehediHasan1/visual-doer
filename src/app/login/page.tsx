@@ -74,7 +74,7 @@ const Login = () => {
             </button>
             <button
               onClick={handleForgotPassword}
-              className="text-sm hover:border-b-[1px]"
+              className="text-sm hover:border-b-[1px] cursor-pointer"
             >
               Forgot Password?
             </button>

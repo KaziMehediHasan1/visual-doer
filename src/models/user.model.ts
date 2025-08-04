@@ -4,6 +4,8 @@ interface IUser extends Document {
   name: string;
   email: string;
   password: string;
+  resetPasswordToken?: string | null;
+  resetPasswordExpire?: Date | null;
 }
 
 const userSchema = new Schema<IUser>(
@@ -21,6 +23,14 @@ const userSchema = new Schema<IUser>(
       type: String,
       required: true,
       minlength: 6,
+    },
+    resetPasswordToken: {
+      type: String,
+      default: null,
+    },
+    resetPasswordExpire: {
+      type: Date,
+      default: null,
     },
   },
   { timestamps: true }

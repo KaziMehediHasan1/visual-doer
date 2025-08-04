@@ -1,26 +1,28 @@
 import { NextRequest } from "next/server";
+import crypto from "crypto";
 import User from "@/models/User.model";
 import { ApiResponse } from "@/hooks/apiResponse";
 import { sendMail } from "@/lib/sendEmail";
-import { SignToken, verifyToken } from "@/lib/auth";
+import { dbConnect } from "@/lib/mongodb";
 
 export async function POST(req: NextRequest) {
-  const email = await req.json();
+  const email  = await req.json();
   console.log(email, "check forgot mail find");
+
+  await dbConnect();
   const user = await User.findOne({ email });
-  if (!user)
+  if (!user) {
     return ApiResponse({
       message: "User not found",
       status: 404,
       success: false,
     });
-  console.log(user, "user ace kina");
+  }
 
-  const token = SignToken(email);
-  const hashed = verifyToken(token);
-  console.log(token, hashed, "hashed dekhbo r token o");
+  const token = crypto.randomBytes(32).toString("hex");
+  const hashed = crypto.createHash("sha256").update(token).digest("hex");
   user.resetPasswordToken = hashed;
-  user.resetPasswordExpire = Date.now() + 15 * 60 * 1000; // 15 mins
+  user.resetPasswordExpire = new Date(Date.now() + 15 * 60 * 1000); 
   await user.save();
 
   const resetUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/reset-password?token=${token}`;
@@ -28,11 +30,11 @@ export async function POST(req: NextRequest) {
   await sendMail({
     email: "kazimehedihasan243@gmail.com",
     sendTo: email,
-    subject: "forgot password token",
+    subject: "Forgot Password Token",
     html: `
        <p>Your token is: <strong>${token}</strong></p>
        <p>Click the link to reset your password:</p>
-       <a href="${resetUrl}">reset password</a>
+       <a href="${resetUrl}">Reset Password</a>
     `,
   });
 

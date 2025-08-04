@@ -3,6 +3,7 @@ const SMTP_SERVER_USERNAME = process.env.NEXT_SMTP_USERNAME;
 const SMTP_SERVER_PASSWORD = process.env.NEXT_SMTP_PASSWORD;
 const SITE_MAIL_RECIEVER = process.env.NEXT_PUBLIC_ADMIN_MAIL;
 const transporter = nodemailer.createTransport({
+  service: "gmail",
   host: "smtp.ethereal.email",
   port: 587,
   secure: false,
