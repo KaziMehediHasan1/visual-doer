@@ -3,12 +3,11 @@ import { ApiResponse } from "@/hooks/apiResponse";
 import { sendMail } from "@/lib/sendEmail";
 import { dbConnect } from "@/lib/mongodb";
 import jwt from "jsonwebtoken";
-import User from "../../../models/User.model";
+import User from "../../../models/User.model"
 
 export async function POST(req: NextRequest) {
   const email = await req.json();
   console.log(email, "check forgot mail find");
-
   await dbConnect();
   const user = await User.findOne({ email });
   if (!user) {
