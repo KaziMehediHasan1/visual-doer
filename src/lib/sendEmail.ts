@@ -28,6 +28,7 @@ export async function sendMail({
     from: email,
     to: sendTo || SITE_MAIL_RECIEVER,
     subject: subject,
+    text: "partho bhai  , password set koren",
     html: html ? html : "",
   });
   console.log("Message Sent", info.messageId);

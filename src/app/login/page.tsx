@@ -1,10 +1,8 @@
 "use client";
 import uploadFormData from "@/hooks/uploadFormData";
-// import { useRouter } from "next/navigation";
 import { ChangeEvent, FormEvent, useState } from "react";
 
 const Login = () => {
-  // const route = useRouter();
   const [loader, setLoader] = useState<boolean>(false);
   const [email, setEmail] = useState("");
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
@@ -12,20 +10,21 @@ const Login = () => {
     const form = e.target as HTMLFormElement;
     const email = form.email.value;
     const password = form.password.value;
+    setLoader(true);
     console.log(email, password, "check mail and password");
   };
 
   const handleForgotPassword = async () => {
     const email = process.env.NEXT_PUBLIC_ADMIN_MAIL;
-    console.log("check usermai: ", email);
     if (email) {
       try {
+        setLoader(true);
         const res = await uploadFormData({
           data: email,
           url: "/forgot-password/api",
           setLoader,
         });
-        // route.push("/reset-password");
+        
         console.log(loader, "just check loader and data", res);
       } catch (error) {
         console.log(error, "check error");

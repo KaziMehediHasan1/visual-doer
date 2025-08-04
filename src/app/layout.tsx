@@ -22,7 +22,7 @@ export default function RootLayout({
     "/dashboard",
     "/login",
     "/register",
-    "/forgot-password",
+    "/reset-password",
   ].some((path) => pathname?.startsWith(path));
 
   return (

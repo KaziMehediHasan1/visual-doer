@@ -1,0 +1,34 @@
+import { ApiResponse } from "@/hooks/apiResponse";
+import { dbConnect } from "@/lib/mongodb";
+import User from "@/models/User.model";
+import bcrypt from "bcrypt";
+export async function POST(req: Request) {
+  try {
+    await dbConnect();
+    const { email, token, password } = await req.json();
+    const user = await User.findOne({ email });
+    if (!user) {
+      throw new Error("user not found");
+    }
+    const verifyPass = await bcrypt.compare(password, user.password);
+    if (!verifyPass) {
+      throw new Error("email or password is wrong");
+    }
+
+    if (verifyPass && user) {
+      return ApiResponse({
+        status: 201,
+        message: "Login Successfull",
+        success: true,
+        data: user,
+        token: token,
+      });
+    }
+  } catch (error) {
+    return ApiResponse({
+      status: 404,
+      message: `${error}`,
+      success: false,
+    });
+  }
+}
