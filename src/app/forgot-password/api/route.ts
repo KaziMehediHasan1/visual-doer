@@ -1,17 +1,17 @@
 import { NextRequest } from "next/server";
-import User from "@/models/User.model";
-import { ApiResponse } from "@/hooks/apiResponse";
+// import User from "@/models/User.model";
+// import { ApiResponse } from "@/hooks/apiResponse";
 
 export async function POST(req: NextRequest) {
-  const { email } = await req.json();
+  const email = await req.json();
   console.log(email, "check forgot mail find");
-  const user = await User.findOne({ email });
-  if (!user)
-    return ApiResponse({
-      message: "User not found",
-      status: 404,
-      success: false,
-    });
+  // const user = await User.findOne({ email });
+  // if (!user)
+  //   return ApiResponse({
+  //     message: "User not found",
+  //     status: 404,
+  //     success: false,
+  //   });
 
   // const token = crypto.randomBytes(32).toString("hex");
   // const hashed = crypto.createHash("sha256").update(token).digest("hex");
@@ -28,9 +28,9 @@ export async function POST(req: NextRequest) {
   //   html: `<p>Click here to reset password: <a href="${resetUrl}">Reset</a></p>`,
   // });
 
-  return ApiResponse({
-    message: "Reset link sent",
-    status: 200,
-    success: true,
-  });
+  // return ApiResponse({
+  //   message: "Reset link sent",
+  //   status: 200,
+  //   success: true,
+  // });
 }
