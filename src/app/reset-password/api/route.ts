@@ -2,32 +2,56 @@ import { ApiResponse } from "@/hooks/apiResponse";
 import { dbConnect } from "@/lib/mongodb";
 import User from "@/models/User.model";
 import bcrypt from "bcrypt";
+import jwt, { JwtPayload } from "jsonwebtoken";
+
 export async function POST(req: Request) {
   try {
     await dbConnect();
-    const { email, token, password } = await req.json();
-    const user = await User.findOne({ email });
-    if (!user) {
-      throw new Error("user not found");
-    }
-    const verifyPass = await bcrypt.compare(password, user.password);
-    if (!verifyPass) {
-      throw new Error("email or password is wrong");
-    }
-
-    if (verifyPass && user) {
+    const { newPassword, token } = await req.json();
+    let decoded;
+    try {
+      decoded = jwt.verify(
+        token,
+        process.env.NEXT_JWT_TOKEN_SECRET!
+      ) as JwtPayload;
+    } catch (err) {
       return ApiResponse({
-        status: 201,
-        message: "Login Successfull",
-        success: true,
-        data: user,
-        token: token,
+        status: 400,
+        message: `${err} Invalid token`,
+        success: false,
       });
     }
+
+    const user = await User.findOne({
+      email: decoded.email,
+      resetPasswordToken: token,
+      resetPasswordExpire: { $gt: Date.now() },
+    });
+
+    if (!user) {
+      return ApiResponse({
+        status: 400,
+        message: "Invalid or expired token",
+        success: false,
+      });
+    }
+
+    // Hash new password and save
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    user.password = hashedPassword;
+    user.resetPasswordToken = null;
+    user.resetPasswordExpire = null;
+    await user.save();
+
+    return ApiResponse({
+      status: 200,
+      message: "Password reset successful",
+      success: true,
+    });
   } catch (error) {
     return ApiResponse({
-      status: 404,
-      message: `${error}`,
+      status: 500,
+      message: `${error} Something went wrong`,
       success: false,
     });
   }

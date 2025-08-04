@@ -1,17 +1,23 @@
 "use client";
 import uploadFormData from "@/hooks/uploadFormData";
-import { ChangeEvent, FormEvent, useState } from "react";
+import {  FormEvent, useState } from "react";
 
 const Login = () => {
   const [loader, setLoader] = useState<boolean>(false);
-  const [email, setEmail] = useState("");
-  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const email = form.email.value;
     const password = form.password.value;
     setLoader(true);
-    console.log(email, password, "check mail and password");
+    if (email && password) {
+      const res = await uploadFormData({
+        data: { email, password },
+        url: "/login/api",
+        setLoader,
+      });
+      console.log(res, "check mail and password get db");
+    }
   };
 
   const handleForgotPassword = async () => {
@@ -24,7 +30,7 @@ const Login = () => {
           url: "/forgot-password/api",
           setLoader,
         });
-        
+
         console.log(loader, "just check loader and data", res);
       } catch (error) {
         console.log(error, "check error");
@@ -46,10 +52,6 @@ const Login = () => {
               className="w-full p-2 border-b-2 border-primary-400 bg-transparent outline-none focus:border-b-2 focus:border-primary-600"
               name="email"
               type="email"
-              value={email}
-              onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                setEmail(e.target.value)
-              }
             />
           </div>
           <div className="mb-4">

@@ -1,18 +1,35 @@
 "use client";
-import { useRouter } from "next/navigation";
-import React, { FormEvent } from "react";
+import uploadFormData from "@/hooks/uploadFormData";
+import { useRouter, useSearchParams } from "next/navigation";
+import React, { FormEvent, useState } from "react";
 
 const ResetPassword = () => {
   const redirect = useRouter();
-  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+  const params = useSearchParams();
+  const token = params.get("token");
+  // console.log(token, "got token");
+  const [loader, setLoader] = useState<boolean>(false);
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
-    const email = form.newPassword.value;
-    const password = form.ConfirmPassword.value;
-    if (email && password) {
-      redirect.push("/login");
+    const newPassword = form.newPassword.value;
+    const ConfirmPassword = form.ConfirmPassword.value;
+    if (newPassword && ConfirmPassword) {
+      const res = (await uploadFormData({
+        data: { newPassword, token },
+        url: "/reset-password/api",
+        setLoader,
+      })) as { success: boolean; status: number };
+      if (res.success && res.status == 200) {
+        redirect.push("/login");
+      }
     }
-    console.log(email, password, "check mail and password");
+    console.log(
+      newPassword,
+      ConfirmPassword,
+      loader,
+      "check mail and password"
+    );
   };
   return (
     <div className="text-white min-h-screen flex items-center justify-center">

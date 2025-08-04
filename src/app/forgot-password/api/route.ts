@@ -1,12 +1,12 @@
 import { NextRequest } from "next/server";
-import crypto from "crypto";
 import User from "@/models/User.model";
 import { ApiResponse } from "@/hooks/apiResponse";
 import { sendMail } from "@/lib/sendEmail";
 import { dbConnect } from "@/lib/mongodb";
+import jwt from "jsonwebtoken";
 
 export async function POST(req: NextRequest) {
-  const email  = await req.json();
+  const email = await req.json();
   console.log(email, "check forgot mail find");
 
   await dbConnect();
@@ -19,10 +19,12 @@ export async function POST(req: NextRequest) {
     });
   }
 
-  const token = crypto.randomBytes(32).toString("hex");
-  const hashed = crypto.createHash("sha256").update(token).digest("hex");
-  user.resetPasswordToken = hashed;
-  user.resetPasswordExpire = new Date(Date.now() + 15 * 60 * 1000); 
+  const token = jwt.sign(
+    { email: user.email },
+    process.env.NEXT_JWT_TOKEN_SECRET!
+  );
+  user.resetPasswordToken = token;
+  user.resetPasswordExpire = new Date(Date.now() + 15 * 60 * 1000);
   await user.save();
 
   const resetUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/reset-password?token=${token}`;
