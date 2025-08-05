@@ -1,6 +1,7 @@
-import { ApiResponse } from "@/hooks/apiResponse";
-import { dbConnect } from "@/lib/mongodb";
-import Faq from "@/models/Faq.model";
+import Faq from "@models/Faq.model";
+import { ApiResponse } from "hooks/apiResponse";
+import { dbConnect } from "lib/mongodb";
+
 
 // FAQ CREATE
 export async function POST(req: Request) {

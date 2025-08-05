@@ -1,6 +1,7 @@
-import { ApiResponse } from "@/hooks/apiResponse";
-import { dbConnect } from "@/lib/mongodb";
-import Blog from "@/models/Blog.model";
+import Blog from "@models/Blog.model";
+import { ApiResponse } from "hooks/apiResponse";
+import { dbConnect } from "lib/mongodb";
+
 
 // BLOG CREATED SUCCESSFULL
 export async function POST(req: Request) {

@@ -1,9 +1,8 @@
-import { ApiResponse } from "@/hooks/apiResponse";
-import { SignToken } from "@/lib/auth";
-import { dbConnect } from "@/lib/mongodb";
-import User from "@/models/User.model";
-
+import User from "@models/User.model";
 import bcrypt from "bcrypt";
+import { ApiResponse } from "hooks/apiResponse";
+import { SignToken } from "lib/auth";
+import { dbConnect } from "lib/mongodb";
 
 export async function POST(req: Request) {
   try {
