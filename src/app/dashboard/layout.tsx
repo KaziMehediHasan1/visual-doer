@@ -1,5 +1,5 @@
-import { DashboardSidebar } from "@/components/dashboard/DashboardSideBar";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { DashboardSidebar } from "components/dashboard/DashboardSideBar";
+import { SidebarProvider, SidebarTrigger } from "components/ui/sidebar";
 
 const DashboardLayout = ({
   children,

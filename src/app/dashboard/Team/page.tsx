@@ -1,8 +1,8 @@
 "use client";
-import TeamTable from "@/components/team/TeamTable";
-import { Button } from "@/components/ui/button";
-import uploadFormData from "@/hooks/uploadFormData";
-import uploadToCloudinary from "@/hooks/useUploadCloudinary";
+import TeamTable from "components/team/TeamTable";
+import { Button } from "components/ui/button";
+import uploadFormData from "hooks/uploadFormData";
+import uploadToCloudinary from "hooks/useUploadCloudinary";
 import { LoaderCircle } from "lucide-react";
 import React, { FormEvent, useState } from "react";
 

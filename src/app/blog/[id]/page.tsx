@@ -1,10 +1,11 @@
 "use client"
-import BlogImage from "@/assets/images/image.png";
-import BlogCard from "@/components/blog/BlogCard";
-import CommonTitle from "@/components/reuse/CommonTitle";
-import CommonWrapper from "@/components/shared/CommonWrapper";
+import BlogImage from "../../../assets/images/image.png";
+
 import Image from "next/image";
-import EffectTwo from "@/assets/images/EffectTwo.png";
+import EffectTwo from "../../../assets/images/EffectTwo.png";
+import CommonWrapper from "components/shared/CommonWrapper";
+import CommonTitle from "components/reuse/CommonTitle";
+import BlogCard from "components/blog/BlogCard";
 // import { useParams } from "next/navigation";
 
 

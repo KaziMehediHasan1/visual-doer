@@ -1,5 +1,5 @@
 "use client";
-import uploadFormData from "@/hooks/uploadFormData";
+import uploadFormData from "hooks/uploadFormData";
 import { useRouter } from "next/navigation";
 import React, { FormEvent, useState } from "react";
 

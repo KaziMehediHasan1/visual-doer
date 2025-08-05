@@ -8,11 +8,11 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-import deleteData from "@/hooks/deleteData";
 import { useEffect, useState } from "react";
-import getData from "@/hooks/getData";
 import Image from "next/image";
 import Swal from "sweetalert2";
+import getData from "hooks/getData";
+import deleteData from "hooks/deleteData";
 type ProjectItem = {
   _id: string;
   title: string;

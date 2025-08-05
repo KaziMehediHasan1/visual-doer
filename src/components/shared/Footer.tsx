@@ -1,15 +1,15 @@
-import Background from "@/assets/images/noiseeffect.png";
-import PrimaryLogo from "@/assets/Logo/PrimaryLogo";
+import Background from "../../assets/images/noiseeffect.png";
+import PrimaryLogo from "../../assets/Logo/PrimaryLogo";
 import CommonWrapper from "./CommonWrapper";
-import Mail from "@/assets/icons/Mail";
-import Phone from "@/assets/icons/Phone";
-import Address from "@/assets/icons/Address";
-import Facebook from "@/assets/icons/Facebook";
-import Linkedin from "@/assets/icons/Linkedin";
-import Dribble from "@/assets/icons/Dribble";
-import Behance from "@/assets/icons/Behance";
-import EffectTwo from "@/assets/images/EffectOne.png";
-import Instagram from "@/assets/icons/Instagram";
+import Mail from "../../assets/icons/Mail";
+import Phone from "../../assets/icons/Phone";
+import Address from "../../assets/icons/Address";
+import Facebook from "../../assets/icons/Facebook";
+import Linkedin from "../../assets/icons/Linkedin";
+import Dribble from "../../assets/icons/Dribble";
+import Behance from "../../assets/icons/Behance";
+import EffectTwo from "../../assets/images/EffectTwo.png";
+import Instagram from "../../assets/icons/Instagram";
 
 const Footer = () => {
   return (

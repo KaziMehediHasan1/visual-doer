@@ -1,13 +1,13 @@
 "use client";
 import { useState } from "react";
-import Background from "@/assets/images/noiseeffect.png";
-import PrimaryLogo from "@/assets/Logo/PrimaryLogo";
+import Background from "../../assets/images/noiseeffect.png";
+import PrimaryLogo from "../../assets/Logo/PrimaryLogo";
 import { Link } from "react-scroll";
 import PrimaryButton from "../reuse/NavButton";
-import ToggleBar from "@/assets/icons/ToggleBar";
+import ToggleBar from "../../assets/icons/ToggleBar";
 import CommonWrapper from "./CommonWrapper";
-import { X } from "lucide-react"; 
-
+import { X } from "lucide-react";
+import NextLink from "next/link";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -26,7 +26,9 @@ const Navbar = () => {
           style={{ backgroundImage: `url(${Background.src})` }}
         />
         <div className="relative z-10 flex items-center justify-between">
-          <PrimaryLogo />
+          <NextLink href="/">
+            <PrimaryLogo />
+          </NextLink>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center space-x-7">

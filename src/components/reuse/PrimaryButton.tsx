@@ -1,4 +1,4 @@
-import RightArrow from "@/assets/icons/RightArrow";
+import RightArrow from "../../assets/icons/RightArrow";
 import React from "react";
 
 const PrimaryButton = ({

@@ -1,6 +1,6 @@
 import React from "react";
 import CommonTitle from "../reuse/CommonTitle";
-import Background from "@/assets/images/MoonShape.png";
+import Background from "../../assets/images/MoonShape.png";
 import ServiceCard from "../reuse/ServiceCard";
 
 const Brand = () => {

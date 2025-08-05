@@ -1,10 +1,10 @@
 "use client";
 
-import ProjectTable from "@/components/projects/ProjectTable";
-import TagInput from "@/components/reuse/TagInput";
-import { Button } from "@/components/ui/button";
-import uploadFormData from "@/hooks/uploadFormData";
-import uploadToCloudinary from "@/hooks/useUploadCloudinary";
+import ProjectTable from "components/projects/ProjectTable";
+import TagInput from "components/reuse/TagInput";
+import { Button } from "components/ui/button";
+import uploadFormData from "hooks/uploadFormData";
+import uploadToCloudinary from "hooks/useUploadCloudinary";
 import { LoaderCircle } from "lucide-react";
 import { FormEvent, useState } from "react";
 

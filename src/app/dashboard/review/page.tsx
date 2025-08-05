@@ -1,8 +1,8 @@
 "use client";
-import ReviewTable from "@/components/review/ReviewTable";
-import { Button } from "@/components/ui/button";
-import uploadFormData from "@/hooks/uploadFormData";
-import uploadToCloudinary from "@/hooks/useUploadCloudinary";
+import ReviewTable from "components/review/ReviewTable";
+import { Button } from "components/ui/button";
+import uploadFormData from "hooks/uploadFormData";
+import uploadToCloudinary from "hooks/useUploadCloudinary";
 import { LoaderCircle } from "lucide-react";
 import { FormEvent, useState } from "react";
 

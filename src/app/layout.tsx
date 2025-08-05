@@ -1,10 +1,11 @@
 "use client";
 import { Sora } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/shared/Navbar";
-import Footer from "@/components/shared/Footer";
+
 import { usePathname } from "next/navigation";
 import { Toaster } from "sonner";
+import Navbar from "components/shared/Navbar";
+import Footer from "components/shared/Footer";
 
 // Import all weights from 100 to 800
 const sora = Sora({

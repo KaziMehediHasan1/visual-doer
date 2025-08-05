@@ -1,5 +1,5 @@
 "use client";
-import uploadFormData from "@/hooks/uploadFormData";
+import uploadFormData from "hooks/uploadFormData";
 import { FormEvent, useState } from "react";
 import { toast } from "sonner";
 

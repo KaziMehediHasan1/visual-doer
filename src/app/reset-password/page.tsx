@@ -1,4 +1,5 @@
-import ResetPassword from "@/components/resetpassword";
+import ResetPassword from "components/resetpassword";
+
 export const dynamic = "force-dynamic";
 export default async function Page({
   searchParams,

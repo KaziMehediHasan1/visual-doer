@@ -1,9 +1,10 @@
 "use client";
-import FaqTable from "@/components/faq/FaqTable";
-import TagInput from "@/components/reuse/TagInput";
-import { Button } from "@/components/ui/button";
-import uploadFormData from "@/hooks/uploadFormData";
 
+
+import FaqTable from "components/faq/FaqTable";
+import TagInput from "components/reuse/TagInput";
+import { Button } from "components/ui/button";
+import uploadFormData from "hooks/uploadFormData";
 import { LoaderCircle } from "lucide-react";
 import React, { FormEvent, useState } from "react";
 

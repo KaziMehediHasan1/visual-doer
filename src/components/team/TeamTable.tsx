@@ -1,6 +1,5 @@
 "use client";
-import deleteData from "@/hooks/deleteData";
-import getData from "@/hooks/getData";
+
 import React, { useEffect, useState } from "react";
 import {
   Table,
@@ -13,6 +12,8 @@ import {
 import { DeleteIcon } from "lucide-react";
 import Image from "next/image";
 import Swal from "sweetalert2";
+import getData from "hooks/getData";
+import deleteData from "hooks/deleteData";
 type TeamItem = {
   _id: string;
   name: string;

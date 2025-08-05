@@ -1,4 +1,4 @@
-import RightArrow from "@/assets/icons/RightArrow";
+import RightArrow from "../../assets/icons/RightArrow";
 import CommonWrapper from "../shared/CommonWrapper";
 import { Button } from "../ui/button";
 import PrimaryButton from "./PrimaryButton";

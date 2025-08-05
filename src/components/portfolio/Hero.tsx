@@ -1,8 +1,8 @@
-import Google from "@/assets/icons/Google";
-import Background from "@/assets/images/MoonShape.png";
-import Star from "@/assets/Logo/Star";
+import Google from "../../assets/icons/Google";
+import Background from "../../assets/images/MoonShape.png";
+import Star from "../../assets/Logo/Star";
 import CommonWrapper from "../shared/CommonWrapper";
-import Gurranty from "@/assets/Logo/Gurranty";
+import Gurranty from "../../assets/Logo/Gurranty";
 import PrimaryButton from "../reuse/PrimaryButton";
 const Hero = () => {
   return (

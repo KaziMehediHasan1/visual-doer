@@ -1,5 +1,6 @@
 "use client";
-import DashboardCard from "@/components/dashboard/DashboardCard";
+
+import DashboardCard from "components/dashboard/DashboardCard";
 
 const Dashboard = () => {
   return (

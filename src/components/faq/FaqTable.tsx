@@ -1,6 +1,4 @@
 "use client";
-import deleteData from "@/hooks/deleteData";
-import getData from "@/hooks/getData";
 import React, { useEffect, useState } from "react";
 import {
   Table,
@@ -12,6 +10,8 @@ import {
 } from "../ui/table";
 import { DeleteIcon } from "lucide-react";
 import Swal from "sweetalert2";
+import getData from "hooks/getData";
+import deleteData from "hooks/deleteData";
 type FaqItem = {
   _id: string;
   question: string;

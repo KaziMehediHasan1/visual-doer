@@ -1,11 +1,12 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import { FormEvent, useState } from "react";
-import uploadToCloudinary from "@/hooks/useUploadCloudinary";
 import { LoaderCircle } from "lucide-react";
-import uploadFormData from "@/hooks/uploadFormData";
-import TagInput from "@/components/reuse/TagInput";
-import BlogTable from "@/components/blog/BlogTable";
+import uploadToCloudinary from "hooks/useUploadCloudinary";
+import uploadFormData from "hooks/uploadFormData";
+import TagInput from "components/reuse/TagInput";
+import { Button } from "components/ui/button";
+import BlogTable from "components/blog/BlogTable";
+
 
 const Blog = () => {
   const [loader, setLoader] = useState<boolean>(false);

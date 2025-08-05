@@ -1,6 +1,6 @@
 import CommonTitle from "../reuse/CommonTitle";
 import CommonWrapper from "../shared/CommonWrapper";
-import Image from "@/assets/images/EffectTwo.png";
+import Image from "../../assets/images/EffectTwo.png";
 
 const Goal = () => {
   return (

@@ -1,4 +1,4 @@
-import RightArrow from "@/assets/icons/RightArrow";
+import RightArrow from "../../assets/icons/RightArrow";;
 
 const NavButton = ({ text, style }: { text: string; style?: string }) => {
   return (
