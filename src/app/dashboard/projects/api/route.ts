@@ -1,6 +1,7 @@
-import { ApiResponse } from "@/hooks/apiResponse";
-import { dbConnect } from "@/lib/mongodb";
-import Project from "@/models/Project.model";
+import Project from "@models/Project.model";
+import { ApiResponse } from "hooks/apiResponse";
+import { dbConnect } from "lib/mongodb";
+
 
 // ADD COMPLETED PROJECT DATA
 export async function POST(req: Request) {
