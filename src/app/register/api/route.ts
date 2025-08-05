@@ -1,4 +1,4 @@
-import User from "@models/User.model";
+import User from "../../../models/User.model";
 import bcrypt from "bcrypt";
 import { ApiResponse } from "hooks/apiResponse";
 import { dbConnect } from "lib/mongodb";
