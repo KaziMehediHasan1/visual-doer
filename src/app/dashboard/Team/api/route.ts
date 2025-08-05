@@ -1,4 +1,4 @@
-import Team from "@models/Team.model";
+import Team from "app/models/Team.model";
 import { ApiResponse } from "hooks/apiResponse";
 import { dbConnect } from "lib/mongodb";
 
@@ -6,7 +6,7 @@ import { dbConnect } from "lib/mongodb";
 export async function POST(req: Request) {
   try {
     const { image, name, designation } = await req.json();
-    
+
     await dbConnect();
     if (image && name && designation) {
       const result = await new Team({ image, name, designation });

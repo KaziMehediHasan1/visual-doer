@@ -1,14 +1,13 @@
-import Blog from "@models/Blog.model";
+import Blog from "app/models/Blog.model";
 import { ApiResponse } from "hooks/apiResponse";
 import { dbConnect } from "lib/mongodb";
-
 
 // BLOG CREATED SUCCESSFULL
 export async function POST(req: Request) {
   try {
     const { title, subtitle, description, keyword, image } = await req.json();
     await dbConnect();
-    
+
     if (title && subtitle && description && keyword && image) {
       const result = await new Blog({
         title,

@@ -1,7 +1,6 @@
-import Review from "@models/Review.model";
+import Review from "app/models/Review.model";
 import { ApiResponse } from "hooks/apiResponse";
 import { dbConnect } from "lib/mongodb";
-
 
 // REVIEW CREATE
 export async function POST(req: Request) {
@@ -15,14 +14,14 @@ export async function POST(req: Request) {
       companyImage,
     } = await req.json();
     await dbConnect();
-    if (review && totalReview && clientName && designation && companyImage ) {
+    if (review && totalReview && clientName && designation && companyImage) {
       const result = await new Review({
         review,
         totalReview,
         clientName,
         designation,
         company,
-        companyImage ,
+        companyImage,
       });
       await result.save();
       if (result) {
@@ -87,5 +86,3 @@ export async function DELETE(req: Request) {
     });
   }
 }
-
-

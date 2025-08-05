@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import { ApiResponse } from "hooks/apiResponse";
 import { dbConnect } from "lib/mongodb";
 import { sendMail } from "lib/sendEmail";
-import User from "../../../models/User.model";
+import User from "../../models/User.model";
 
 export async function POST(req: NextRequest) {
   const email = await req.json();

@@ -1,7 +1,6 @@
-import Skill from "@models/Skill.mode";
+import Skill from "app/models/Skill.mode";
 import { ApiResponse } from "hooks/apiResponse";
 import { dbConnect } from "lib/mongodb";
-
 
 // POST FUNCTION FOR CREATING SKILLS
 export async function POST(req: Request) {
