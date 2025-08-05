@@ -1,6 +1,6 @@
-import { ApiResponse } from "@/hooks/apiResponse";
-import { dbConnect } from "@/lib/mongodb";
-import Team from "@/models/Team.model";
+import Team from "@models/Team.model";
+import { ApiResponse } from "hooks/apiResponse";
+import { dbConnect } from "lib/mongodb";
 
 // TEAM ADD
 export async function POST(req: Request) {

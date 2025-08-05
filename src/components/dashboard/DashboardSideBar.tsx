@@ -10,6 +10,9 @@ import {
   FilePlus2,
 } from "lucide-react";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import {
   Sidebar,
   SidebarContent,
@@ -18,10 +21,8 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import PrimaryLogo from "@/assets/Logo/PrimaryLogo";
+} from "components/ui/sidebar";
+import PrimaryLogo from "assets/Logo/PrimaryLogo";
 
 // Menu items.
 const items = [

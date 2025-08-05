@@ -5,9 +5,11 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import deleteData from "@/hooks/deleteData";
-import getData from "@/hooks/getData";
+} from "components/ui/table";
+import deleteData from "hooks/deleteData";
+
+import getData from "hooks/getData";
+
 import { DeleteIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";

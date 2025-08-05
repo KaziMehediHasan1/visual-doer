@@ -1,4 +1,5 @@
-import getData from "@/hooks/getData";
+
+import getData from "hooks/getData";
 import { useEffect, useState } from "react";
 
 type Props = {

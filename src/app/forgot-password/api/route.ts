@@ -1,9 +1,9 @@
 import { NextRequest } from "next/server";
 import jwt from "jsonwebtoken";
-import User from "../../../models/User.model"
 import { ApiResponse } from "hooks/apiResponse";
 import { dbConnect } from "lib/mongodb";
 import { sendMail } from "lib/sendEmail";
+import User from "@models/User.model";
 
 export async function POST(req: NextRequest) {
   const email = await req.json();

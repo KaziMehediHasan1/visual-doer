@@ -1,6 +1,7 @@
-import { ApiResponse } from "@/hooks/apiResponse";
-import { dbConnect } from "@/lib/mongodb";
-import Review from "@/models/Review.model";
+import Review from "@models/Review.model";
+import { ApiResponse } from "hooks/apiResponse";
+import { dbConnect } from "lib/mongodb";
+
 
 // REVIEW CREATE
 export async function POST(req: Request) {
