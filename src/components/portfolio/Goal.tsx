@@ -5,9 +5,9 @@ import Image from "../../assets/images/EffectTwo.png";
 const Goal = () => {
   return (
     <CommonWrapper>
-      <div className="w-full ">
+      <div className="w-full">
         {/* TEXT SECTION */}
-        <section className="">
+        <section className="pt-20 xl:pt-44">
           <CommonTitle
             text="set your goal with us"
             style="max-w-[250px] md:max-w-[300px] mx-auto"

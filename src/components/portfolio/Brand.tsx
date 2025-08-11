@@ -9,7 +9,7 @@ const Brand = () => {
       {/* brand section */}
       <section>
         <div
-        className="relative -top-28 w-full rotate-180 bg-no-repeat bg-center bg-contain min-[360px] 
+        className="relative top-10 w-full rotate-180 bg-no-repeat bg-center bg-contain min-[360px] 
         sm:min-h-[600px] 
         md:min-h-[700px] 
         lg:min-h-[750px]"
