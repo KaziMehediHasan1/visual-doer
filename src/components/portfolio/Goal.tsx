@@ -4,12 +4,20 @@ import Image from "../../assets/images/EffectTwo.png";
 import GoalCard from "components/reuse/GoalCard";
 
 const Goal = () => {
-  
   return (
     <CommonWrapper>
-      <div className="w-full">
+      {/* BACKGROUND SECTION */}
+      <section
+        style={{
+          backgroundImage: `url(${Image.src})`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+        className="w-full min-h-[400px] sm:min-h-[600px] lg:min-h-[800px] xl:min-h-[1250px] "
+      >
         {/* TEXT SECTION */}
-        <section className="pt-20 xl:pt-44">
+        <section className="pt-2 xl:pt-44">
           <CommonTitle
             text="set your goal with us"
             style="max-w-[250px] md:max-w-[300px] mx-auto"
@@ -19,20 +27,9 @@ const Goal = () => {
             we’ll create a strategic roadmap to achieve lasting success.
           </p>
         </section>
-      </div>
-      {/* BACKGROUND SECTION */}
-      <section
-        style={{
-          backgroundImage: `url(${Image.src})`,
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-        className="w-full min-h-[400px] sm:min-h-[600px] lg:min-h-[800px] xl:min-h-[900px"
-      >
-        <div className="mt-10">
+        <section className="pt-10">
           <GoalCard />
-        </div>
+        </section>
       </section>
     </CommonWrapper>
   );

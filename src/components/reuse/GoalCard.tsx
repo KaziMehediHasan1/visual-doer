@@ -7,8 +7,14 @@ const GoalCard = () => {
         "Creating visually stunning and user-friendly websites that drive engagement.",
     },
     {
+      consumers: "55K",
+      title: "Increase in User Engagement",
+      description:
+        "Enhancing user experience through intuitive design and seamless functionality.",
+    },
+    {
       consumers: "42K",
-      title: "new consumers last year",
+      title: "New consumers last year",
       description:
         "Building innovative solutions that empower businesses to thrive in the digital age.",
     },
@@ -20,12 +26,12 @@ const GoalCard = () => {
     },
   ];
   return (
-    <section className="flex  gap-x-4">
+    <section className="grid xl:grid-cols-2 gap-5">
       {data.map((Item, index) => {
         return (
           <div
             key={index}
-            className="w-full max-w-[430px] h-[350px] p-9 rounded-[40px] bg-[lightgray] bg-cover bg-no-repeat bg-center backdrop-blur-[10px] bg-blend-overlay space-y-[0.6rem]"
+            className="w-full p-9 rounded-[40px] bg-[lightgray] bg-cover bg-no-repeat bg-center backdrop-blur-[10px] bg-blend-overlay space-y-[0.6rem]"
             style={{ backgroundColor: "rgba(0, 50, 40, 0.4)" }}
           >
             <h1
@@ -43,7 +49,7 @@ const GoalCard = () => {
               text-transparent
               leading-[140%]
               w-full
-              text-[1.5rem] xl:text-[1.8rem] font-semibold"
+              text-[1.5rem] xl:text-[2rem] font-semibold"
             >
               {Item.title}
             </h2>
@@ -52,7 +58,7 @@ const GoalCard = () => {
               text-transparent
               leading-[140%]
               w-full
-              text-[0.8rem] xl:text-[1rem] font-semibold"
+              text-[1rem] font-semibold"
             >
               {Item.description}
             </p>

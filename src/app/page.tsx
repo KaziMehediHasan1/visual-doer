@@ -1,5 +1,6 @@
 "use client";
 import Brand from "components/portfolio/Brand";
+import ClientProject from "components/portfolio/ClientProject";
 import Goal from "components/portfolio/Goal";
 import Hero from "components/portfolio/Hero";
 import React from "react";
@@ -7,13 +8,13 @@ import React from "react";
 // import Brand from "@/components/portfolio/Brand";
 // import Goal from "@/components/portfolio/Goal";
 
-
 const Home = () => {
   return (
     <div>
-      <Hero/>
+      <Hero />
       <Brand />
-      <Goal/>
+      <Goal />
+      <ClientProject />
     </div>
   );
 };
