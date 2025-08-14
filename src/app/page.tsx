@@ -5,6 +5,7 @@ import Faq from "components/portfolio/Faq";
 import Feedback from "components/portfolio/Feedback";
 import Goal from "components/portfolio/Goal";
 import Hero from "components/portfolio/Hero";
+import TalkingForm from "components/portfolio/TalkingForm";
 import Team from "components/portfolio/Team";
 import React from "react";
 
@@ -18,6 +19,7 @@ const Home = () => {
       <Faq />
       <Feedback />
       <Team />
+      <TalkingForm />
     </div>
   );
 };
