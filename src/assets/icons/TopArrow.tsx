@@ -1,8 +1,10 @@
+import { cn } from "lib/utils";
 import React from "react";
 
-const TopArrow = () => {
+const TopArrow = ({ style }: { style: string }) => {
   return (
     <svg
+      className={cn(style)}
       width="18"
       height="10"
       viewBox="0 0 18 10"

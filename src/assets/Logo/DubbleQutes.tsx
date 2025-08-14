@@ -6,6 +6,7 @@ const DubbleQutes = () => {
       height="95"
       viewBox="0 0 151 95"
       fill="none"
+      className="max-w-[100px] w-full mx-auto"
     >
       <g opacity="0.08">
         <path

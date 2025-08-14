@@ -14,7 +14,7 @@ const Goal = () => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
-        className="w-full min-h-[400px] sm:min-h-[600px] lg:min-h-[800px] xl:min-h-[1250px] "
+        className="w-full min-h-[400px] sm:min-h-[600px] lg:min-h-[800px] xl:min-h-[1250px]"
       >
         {/* TEXT SECTION */}
         <section className="pt-2 xl:pt-44">

@@ -1,6 +1,8 @@
 "use client";
 import Brand from "components/portfolio/Brand";
 import ClientProject from "components/portfolio/ClientProject";
+import Faq from "components/portfolio/Faq";
+import Feedback from "components/portfolio/Feedback";
 import Goal from "components/portfolio/Goal";
 import Hero from "components/portfolio/Hero";
 import React from "react";
@@ -15,6 +17,8 @@ const Home = () => {
       <Brand />
       <Goal />
       <ClientProject />
+      <Faq />
+      <Feedback />
     </div>
   );
 };
