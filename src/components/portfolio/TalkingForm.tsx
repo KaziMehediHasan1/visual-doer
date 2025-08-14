@@ -1,12 +1,9 @@
 import CommonWrapper from "components/shared/CommonWrapper";
 import MoonShape from "assets/images/MoonShape.png";
 import React from "react";
-import CommonTitle from "components/reuse/CommonTitle";
 import Mail from "assets/icons/Mail";
 import Phone from "assets/icons/Phone";
 import Address from "assets/icons/Address";
-import PrimaryButton from "components/reuse/PrimaryButton";
-import SecondaryButton from "components/reuse/SecondaryButton";
 import NavButton from "components/reuse/NavButton";
 const TalkingForm = () => {
   const handleFormData = (e: React.FormEvent<HTMLFormElement>) => {
