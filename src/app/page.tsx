@@ -5,10 +5,8 @@ import Faq from "components/portfolio/Faq";
 import Feedback from "components/portfolio/Feedback";
 import Goal from "components/portfolio/Goal";
 import Hero from "components/portfolio/Hero";
+import Team from "components/portfolio/Team";
 import React from "react";
-// import Hero from "@/components/portfolio/Hero";
-// import Brand from "@/components/portfolio/Brand";
-// import Goal from "@/components/portfolio/Goal";
 
 const Home = () => {
   return (
@@ -19,6 +17,7 @@ const Home = () => {
       <ClientProject />
       <Faq />
       <Feedback />
+      <Team />
     </div>
   );
 };
