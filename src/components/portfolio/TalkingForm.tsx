@@ -11,7 +11,7 @@ const TalkingForm = () => {
     const formData = new FormData(e.target as HTMLFormElement);
     console.log(formData);
   };
-  return (
+  return (   
     <div className="w-full">
       <section
         className="relative w-full bg-no-repeat bg-center bg-contain min-[360px] 
