@@ -7,7 +7,7 @@ const PrimaryLogo = () => {
       height=""
       viewBox="0 0 650 125"
       fill="none"
-      className="h-10 w-[8rem] sm:w-fit"
+      className="w-[clamp(7.5rem,25vw,11.2rem)] h-[(clamp(1.5rem,5vw,2.2rem)]"
     >
       <path
         d="M177.62 88.86H175.37L161.71 45.55H149.81L166.98 98.13H185.71L200.63 45.55H189.51L177.62 88.86Z"

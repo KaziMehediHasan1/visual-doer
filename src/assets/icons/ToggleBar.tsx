@@ -6,7 +6,7 @@ const ToggleBar = () => {
       height="24"
       viewBox="0 0 34 24"
       fill="none"
-      className="lg:hidden block w-6 h-5 sm:h-9 sm:w-9"
+      className="lg:hidden block w-[clamp(1.2rem,4vw,2.3rem)] h-[clamp(0.9rem,2.5vw,1.3rem)]"
     >
       <path
         d="M2 12H32M2 2H32M2 22H22"
