@@ -6,16 +6,13 @@ import Gurranty from "../../assets/Logo/Gurranty";
 import PrimaryButton from "../reuse/PrimaryButton";
 const Hero = () => {
   return (
-    <div className="w-full mt-10 sm:mt-[60px]">
+    <div className="w-full max-w-[75%] mx-auto">
       {/* TEXT SECTION */}
-      <section className="max-w-[75%] w-full mx-auto space-y-3 sm:space-y-5">
-        <h1
-          className="text-[clamp(48px,5vw,80px)] leading-[clamp(67.2px,6vw,96px)] font-semibold text-center bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent"
-        >
+      <section className="space-y-3 md:space-y-5 mt-[clamp(40px,5vw,80px)]">
+        <h1 className="text-[clamp(48px,5vw,80px)] leading-[clamp(67.2px,6vw,96px)] font-semibold text-center bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent">
           build the brand <br /> with visual doer agency
         </h1>
-        <p className="text-center md:text-[18px] sm:text-[13px] text-xs sm:max-w-[70%] mx-auto bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent leading-[140%]">
-          {" "}
+        <p className="text-center text-[clamp(1.2rem,3.2vw,1.5rem)] leading-[clamp(2rem,8vw,2.3rem)] sm:max-w-[70%] mx-auto bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent ">
           Empowering businesses with cutting-edge AI technology. Transforming
           ideas into intelligent, scalable solutions.
         </p>
@@ -33,8 +30,8 @@ const Hero = () => {
         }}
       >
         <CommonWrapper>
-          <div className="max-w-fit mx-auto space-y-8 lg:space-y-12 pt-12 lg:pt-28">
-            <div className="rounded-[20px] p-4 sm:px-6 sm:py-5 backdrop-blur-[25px] w-fit mx-auto text-white bg-[rgba(26,59,55,0.3)] text-center space-y-3">
+          <div className="w-fit mx-auto space-y-[1.5rem] md:space-y-[2rem] pt-[clamp(2.5rem,8.3vw,4rem)]">
+            <div className="rounded-[20px] p-4 sm:px-6 sm:py-5 backdrop-blur-[25px] w-full max-w-[clamp(8.8rem,26vw,10.8rem)] mx-auto text-white bg-[rgba(26,59,55,0.3)] text-center space-y-3">
               {/* Rating Block */}
               <div className="flex items-center gap-3 justify-center">
                 <Google />
@@ -55,13 +52,12 @@ const Hero = () => {
               <p className="text-xs sm:text-sm md:text-[17px] leading-snug">
                 Review (210)
               </p>
-
-              {/* Button */}
             </div>
+            {/* Button */}
             <PrimaryButton text="Set a Meeting" />
             <div className="flex items-center gap-2 relative">
               <Gurranty />
-              <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent md:text-[18px] sm:text-[13px] text-xs">
+              <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent md:text-[18px] sm:text-[13px] text-xs text-center">
                 100% Money Back Guarantee
               </p>
             </div>
