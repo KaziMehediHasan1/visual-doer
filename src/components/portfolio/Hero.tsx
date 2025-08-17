@@ -19,14 +19,10 @@ const Hero = () => {
       </section>
       {/* REVIEW CARD */}
       <div
-        className="w-full bg-no-repeat bg-center bg-contain min-h-[360px] 
-        sm:min-h-[600px] 
-        md:min-h-[700px]  
-        lg:min-h-[750px]"
+        className="w-full bg-no-repeat  bg-contain"
         style={{
+          minHeight: "clamp(392px, 214vw, 1440px)",
           backgroundImage: `url(${Background.src})`,
-          backgroundPosition: "center top",
-          backgroundSize: "contain",
         }}
       >
         <CommonWrapper>
