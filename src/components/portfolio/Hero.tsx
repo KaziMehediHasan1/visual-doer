@@ -9,7 +9,7 @@ const Hero = () => {
     <div className="w-full max-w-[75%] mx-auto">
       {/* TEXT SECTION */}
       <section className="space-y-3 md:space-y-5 mt-[clamp(40px,5vw,80px)]">
-        <h1 className="text-[clamp(48px,5vw,80px)] leading-[clamp(67.2px,6vw,96px)] font-semibold text-center bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent">
+        <h1 className="text-[clamp(40px,5vw,80px)] leading-[clamp(65px,6vw,96px)] font-semibold text-center bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent">
           build the brand <br /> with visual doer agency
         </h1>
         <p className="text-center text-[clamp(1.2rem,3.2vw,1.5rem)] leading-[clamp(2rem,8vw,2.3rem)] sm:max-w-[70%] mx-auto bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent ">
@@ -19,14 +19,14 @@ const Hero = () => {
       </section>
       {/* REVIEW CARD */}
       <div
-        className="w-full bg-no-repeat  bg-contain"
+        className="w-full bg-no-repeat bg-contain"
         style={{
           minHeight: "clamp(392px, 214vw, 1440px)",
           backgroundImage: `url(${Background.src})`,
         }}
       >
         <CommonWrapper>
-          <div className="w-fit mx-auto space-y-[1.5rem] md:space-y-[2rem] pt-[clamp(2.5rem,8.3vw,4rem)]">
+          <div className="w-fit mx-auto space-y-[1.5rem] md:space-y-[2rem] pt-[clamp(2.5rem,8.5vw,5rem)]">
             <div className="rounded-[20px] p-4 sm:px-6 sm:py-5 backdrop-blur-[25px] w-full max-w-[clamp(8.8rem,26vw,10.8rem)] mx-auto text-white bg-[rgba(26,59,55,0.3)] text-center space-y-3">
               {/* Rating Block */}
               <div className="flex items-center gap-3 justify-center">
@@ -59,7 +59,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent leading-[140%] text-[18px] lg:text-[24px] font-semibold text-center max-w-[80%] mx-auto mt-10 md:mt-[160px]">
+          <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent leading-[clamp(1.2rem,10vw,3rem)] text-[clamp(1rem,6vw,1.8rem)] font-semibold text-center mt-[4rem] md:mt-[6rem] xl:mt-[10rem] sm:px-6 lg:px-10">
             Visual Doar transforms your ideas into effective digital design and
             innovative development, combining creativity and technology to craft
             user-centric solutions that bring your vision to life with engaging
