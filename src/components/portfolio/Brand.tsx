@@ -5,31 +5,28 @@ import ServiceCard from "../reuse/ServiceCard";
 
 const Brand = () => {
   return (
-    <>
-      {/* brand section */}
-      <section>
-        <div
-          className="w-full rotate-180 bg-no-repeat bg-center bg-contain"
-          style={{
-            backgroundImage: `url(${Background.src})`,
-            backgroundPosition: "center ",
-            backgroundSize: "contain",
-            minHeight: "clamp(392px, 214vw, 1440px)",
-          }}
-        >
-          <div className="rotate-180 absolute inset-0">
-            <CommonTitle
-              style="max-w-[300px]
+    <section>
+      <div
+        className="w-full rotate-180 bg-no-repeat bg-center bg-contain"
+        style={{
+          backgroundImage: `url(${Background.src})`,
+          backgroundPosition: "center ",
+          backgroundSize: "contain",
+          minHeight: "clamp(392px, 214vw, 1200px)",
+        }}
+      >
+        <div className="rotate-180 absolute inset-0">
+          <CommonTitle
+            style="max-w-[300px]
               md:max-w-[500px] pt-[175px]"
-              text="we must provide
+            text="we must provide
               with your brand"
-            />
+          />
 
-            <ServiceCard />
-          </div>
+          {/* <ServiceCard /> */}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
