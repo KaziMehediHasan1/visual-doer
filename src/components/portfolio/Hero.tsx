@@ -51,7 +51,7 @@ const Hero = () => {
             </div>
             {/* Button */}
             <PrimaryButton text="Set a Meeting" />
-            <div className="flex items-center gap-2 relative">
+            <div className="flex items-center gap-2">
               <Gurranty />
               <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent md:text-[18px] sm:text-[13px] text-xs text-center">
                 100% Money Back Guarantee

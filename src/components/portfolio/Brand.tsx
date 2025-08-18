@@ -9,15 +9,13 @@ const Brand = () => {
       {/* brand section */}
       <section>
         <div
-        className="relative top-10 w-full rotate-180 bg-no-repeat bg-center bg-contain min-[360px] 
-        sm:min-h-[600px] 
-        md:min-h-[700px] 
-        lg:min-h-[750px]"
-        style={{
+          className="w-full rotate-180 bg-no-repeat bg-center bg-contain"
+          style={{
             backgroundImage: `url(${Background.src})`,
             backgroundPosition: "center ",
             backgroundSize: "contain",
-        }}
+            minHeight: "clamp(392px, 214vw, 1440px)",
+          }}
         >
           <div className="rotate-180 absolute inset-0">
             <CommonTitle
@@ -27,7 +25,7 @@ const Brand = () => {
               with your brand"
             />
 
-          <ServiceCard />
+            <ServiceCard />
           </div>
         </div>
       </section>
