@@ -23,7 +23,7 @@ const Brand = () => {
               with your brand"
           />
 
-          {/* <ServiceCard /> */}
+          <ServiceCard />
         </div>
       </div>
     </section>
