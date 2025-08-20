@@ -59,7 +59,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent text-[clamp(24px,4vw,32px)] leading-[clamp(38.4px,6vw,48px)] font-semibold text-center mt-[4rem] md:mt-[6rem] xl:mt-[10rem] sm:px-6 lg:px-10 max-w-[min(calc(100%-100px),1100px)] mx-auto">
+          <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent text-[clamp(24px,4vw,32px)] leading-[clamp(38.4px,6vw,48px)] font-semibold text-center mt-[4rem] xl:mt-[10rem] sm:px-6 lg:px-10 max-w-[min(calc(100%-100px),1100px)] mx-auto">
             Visual Doar transforms your ideas into effective digital design and
             innovative development, combining creativity and technology to craft
             user-centric solutions that bring your vision to life with engaging
@@ -76,7 +76,7 @@ const Hero = () => {
           >
             <div className="rotate-180 absolute inset-0">
               <CommonTitle
-                style="xl:pt-[175px] sm:pt-[85px] pt-[55px]"
+                style="xl:pt-[175px] sm:pt-[85px] pt-[55px] max-w-[350px] sm:max-w-[500px] xl:max-w-[600px]"
                 text="we must provide
               with your brand"
               />
