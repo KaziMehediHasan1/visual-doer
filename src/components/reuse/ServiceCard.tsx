@@ -21,7 +21,7 @@ const ServiceCard = () => {
 
   return (
     <CommonWrapper>
-      <div className="space-y-14 py-5">
+      <div className="space-y-14 py-[clamp(1.5rem,5.5vw,4rem)]">
         {/* Desktop / XL Grid */}
         <section className="hidden xl:grid grid-cols-3 gap-6">
           {visibleData.map((item, index) => (

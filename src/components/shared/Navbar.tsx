@@ -3,7 +3,7 @@ import { useState } from "react";
 import Background from "../../assets/images/noiseeffect.png";
 import PrimaryLogo from "../../assets/Logo/PrimaryLogo";
 import { Link } from "react-scroll";
-import PrimaryButton from "../reuse/NavButton";
+import NavButton from "../reuse/NavButton";
 import ToggleBar from "../../assets/icons/ToggleBar";
 import CommonWrapper from "./CommonWrapper";
 import { X } from "lucide-react";
@@ -56,7 +56,7 @@ const Navbar = () => {
 
           {/* CTA Button - Desktop only */}
           <div className="hidden lg:block">
-            <PrimaryButton text="Lat’s Started" />
+            <NavButton text="Lat’s Started" />
           </div>
         </div>
 

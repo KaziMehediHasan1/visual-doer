@@ -4,12 +4,15 @@ import Star from "../../assets/Logo/Star";
 import CommonWrapper from "../shared/CommonWrapper";
 import Gurranty from "../../assets/Logo/Gurranty";
 import PrimaryButton from "../reuse/PrimaryButton";
+import Brand from "./Brand";
+import CommonTitle from "components/reuse/CommonTitle";
+import ServiceCard from "components/reuse/ServiceCard";
 const Hero = () => {
   return (
     <div>
       {/* TEXT SECTION */}
       <section className="space-y-3 md:space-y-5 mt-[clamp(40px,5vw,80px)] w-full max-w-[85%] xl:max-w-[75%] mx-auto">
-        <h1 className="text-[clamp(40px,5vw,80px)] leading-[clamp(65px,6vw,96px)] font-semibold text-center bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent">
+        <h1 className="text-[clamp(48px,calc(37.3333px+3.33333vw),80px)] leading-[1.05] font-semibold text-center bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent">
           build the brand <br /> with visual doer agency
         </h1>
         <p className="text-center text-[clamp(1.2rem,3.2vw,1.5rem)] leading-[clamp(2rem,8vw,2.3rem)] sm:max-w-[70%] mx-auto bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent ">
@@ -19,7 +22,7 @@ const Hero = () => {
       </section>
       {/* REVIEW CARD */}
       <div
-        className="w-full bg-no-repeat bg-contain "
+        className="w-full bg-no-repeat bg-contain"
         style={{
           minHeight: "clamp(392px, 214vw, 1200px)",
           backgroundImage: `url(${Background.src})`,
@@ -27,7 +30,7 @@ const Hero = () => {
       >
         <CommonWrapper>
           <div className="w-fit mx-auto space-y-[1.5rem] md:space-y-[2.5rem] pt-[clamp(2.5rem,8.5vw,7rem)]">
-            <div className="rounded-[20px] p-4 sm:px-6 sm:py-5 backdrop-blur-[25px] w-full max-w-[clamp(8.8rem,26vw,10.8rem)] mx-auto text-white bg-[rgba(26,59,55,0.3)] text-center space-y-3">
+            <div className="rounded-[20px] p-4 sm:px-6 sm:py-5 backdrop-blur-[25px] w-full max-w-[clamp(8.8rem,26vw,10.8rem)] mx-auto text-white bg-[rgba(21,43,40,0.3)] text-center space-y-3">
               {/* Rating Block */}
               <div className="flex items-center gap-3 justify-center">
                 <Google />
@@ -59,13 +62,33 @@ const Hero = () => {
             </div>
           </div>
 
-          <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent leading-[clamp(1.2rem,10vw,3rem)] text-[clamp(1rem,6vw,1.8rem)] font-semibold text-center mt-[4rem] md:mt-[6rem] xl:mt-[10rem] sm:px-6 lg:px-10">
+          <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent leading-[2rem] sm:leading-[2.3rem] xl:leading-[3rem] text-[1rem] sm:text-[1.2rem] xl:[2rem] font-semibold text-center mt-[4rem] md:mt-[6rem] xl:mt-[10rem] sm:px-6 lg:px-10 w-auto max-w-[850px]">
             Visual Doar transforms your ideas into effective digital design and
             innovative development, combining creativity and technology to craft
             user-centric solutions that bring your vision to life with engaging
             and functional experiences.
           </p>
         </CommonWrapper>
+        <section>
+          <div
+            className="w-full rotate-180 bg-no-repeat bg-center bg-contain mt-[20px]"
+            style={{
+              backgroundImage: `url(${Background.src})`,
+              minHeight: "clamp(392px, 214vw, 1200px)",
+            }}
+          >
+            <div className="rotate-180 absolute inset-0">
+              <CommonTitle
+                style="max-w-[300px]
+              md:max-w-[600px] xl:pt-[175px] sm:pt-[85px] pt-[55px]"
+                text="we must provide
+              with your brand"
+              />
+
+              <ServiceCard />
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
