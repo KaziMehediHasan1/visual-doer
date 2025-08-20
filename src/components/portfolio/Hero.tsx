@@ -4,7 +4,6 @@ import Star from "../../assets/Logo/Star";
 import CommonWrapper from "../shared/CommonWrapper";
 import Gurranty from "../../assets/Logo/Gurranty";
 import PrimaryButton from "../reuse/PrimaryButton";
-import Brand from "./Brand";
 import CommonTitle from "components/reuse/CommonTitle";
 import ServiceCard from "components/reuse/ServiceCard";
 const Hero = () => {
@@ -12,10 +11,10 @@ const Hero = () => {
     <div>
       {/* TEXT SECTION */}
       <section className="space-y-3 md:space-y-5 mt-[clamp(40px,5vw,80px)] w-full max-w-[85%] xl:max-w-[75%] mx-auto">
-        <h1 className="text-[clamp(48px,calc(37.3333px+3.33333vw),80px)] leading-[1.05] font-semibold text-center bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent">
+        <h1 className="text-[clamp(48px,calc(37.3333px+3.33333vw),80px)] leading-[65px] md:leading-[82px] xl:leading-[86px] font-semibold text-center bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent">
           build the brand <br /> with visual doer agency
         </h1>
-        <p className="text-center text-[clamp(1.2rem,3.2vw,1.5rem)] leading-[clamp(2rem,8vw,2.3rem)] sm:max-w-[70%] mx-auto bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent ">
+        <p className="text-center text-[clamp(18px,calc(16px+0.5vw),24px)] w-[90%] sm:w-[min(calc(100%-200px),900px)] mx-auto bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent ">
           Empowering businesses with cutting-edge AI technology. Transforming
           ideas into intelligent, scalable solutions.
         </p>
@@ -35,7 +34,7 @@ const Hero = () => {
               <div className="flex items-center gap-3 justify-center">
                 <Google />
                 <div className="text-left">
-                  <p className="text-xs sm:text-sm md:text-[17px] font-medium leading-none">
+                  <p className="text-xs sm:text-sm md:text-[17px] leading-none">
                     4.8
                   </p>
                   <div className="flex items-center gap-1 mt-1">
@@ -48,21 +47,19 @@ const Hero = () => {
               </div>
 
               {/* Review Text */}
-              <p className="text-xs sm:text-sm md:text-[17px] leading-snug">
-                Review (210)
-              </p>
+              <p className="text-xs sm:text-sm md:text-[17px]">Review (210)</p>
             </div>
             {/* Button */}
             <PrimaryButton text="Set a Meeting" />
             <div className="flex items-center gap-2">
               <Gurranty />
-              <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent text-[18px] sm:text-[1.5rem] text-center">
+              <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent text-[18px] xl:text-[1.5rem] text-center">
                 100% Money Back Guarantee
               </p>
             </div>
           </div>
 
-          <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent leading-[2rem] sm:leading-[2.3rem] xl:leading-[3rem] text-[1rem] sm:text-[1.2rem] xl:[2rem] font-semibold text-center mt-[4rem] md:mt-[6rem] xl:mt-[10rem] sm:px-6 lg:px-10 w-auto max-w-[850px]">
+          <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent text-[clamp(24px,4vw,32px)] leading-[clamp(38.4px,6vw,48px)] font-semibold text-center mt-[4rem] md:mt-[6rem] xl:mt-[10rem] sm:px-6 lg:px-10 max-w-[min(calc(100%-100px),1100px)] mx-auto">
             Visual Doar transforms your ideas into effective digital design and
             innovative development, combining creativity and technology to craft
             user-centric solutions that bring your vision to life with engaging
@@ -79,12 +76,10 @@ const Hero = () => {
           >
             <div className="rotate-180 absolute inset-0">
               <CommonTitle
-                style="max-w-[300px]
-              md:max-w-[600px] xl:pt-[175px] sm:pt-[85px] pt-[55px]"
+                style="xl:pt-[175px] sm:pt-[85px] pt-[55px]"
                 text="we must provide
               with your brand"
               />
-
               <ServiceCard />
             </div>
           </div>
