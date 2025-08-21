@@ -59,7 +59,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent text-[clamp(24px,4vw,32px)] leading-[clamp(38.4px,6vw,48px)] font-semibold text-center mt-[4rem] xl:mt-[10rem] sm:px-6 lg:px-10 max-w-[min(calc(100%-100px),1100px)] mx-auto">
+          <p className="bg-[linear-gradient(45deg,_#FFF_25%,_#707070_100%)] bg-clip-text text-transparent text-[clamp(24px,4vw,32px)] leading-[clamp(38.4px,6vw,48px)] font-semibold text-center mt-[10rem] xl:mt-[17rem] sm:px-6 lg:px-10 max-w-[min(calc(100%-100px),1100px)] mx-auto">
             Visual Doar transforms your ideas into effective digital design and
             innovative development, combining creativity and technology to craft
             user-centric solutions that bring your vision to life with engaging

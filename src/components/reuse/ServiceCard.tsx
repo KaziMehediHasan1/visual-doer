@@ -15,13 +15,15 @@ const ServiceCard = () => {
   ];
 
   const [showAll, setShowAll] = useState<boolean>(false);
-
-  // desktop view cards (3 or all)
   const visibleData = showAll ? data : data.slice(0, 3);
 
   return (
     <CommonWrapper>
-      <div className="space-y-14 py-[clamp(1.5rem,5.5vw,4rem)]">
+      <div
+        className={`space-y-14 py-[clamp(4rem,15vw,20rem)] ${
+          showAll && "space-y-5"
+        }`}
+      >
         {/* Desktop / XL Grid */}
         <section className="hidden xl:grid grid-cols-3 gap-6">
           {visibleData.map((item, index) => (

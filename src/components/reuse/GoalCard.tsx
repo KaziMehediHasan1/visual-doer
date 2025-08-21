@@ -26,7 +26,7 @@ const GoalCard = () => {
     },
   ];
   return (
-    <section className="grid xl:grid-cols-2 gap-5">
+    <section className="grid sm:grid-cols-2 gap-5">
       {data.map((Item, index) => {
         return (
           <div
