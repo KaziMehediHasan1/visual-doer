@@ -5,6 +5,9 @@ import CommonWrapper from "../shared/CommonWrapper";
 import { Button } from "../ui/button";
 import PrimaryButton from "./PrimaryButton";
 import { motion, AnimatePresence } from "framer-motion";
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 const ServiceCard = () => {
   const data = [
     { title: "Game Developer", des: "lrem10kjjjjfjakdfj" },
@@ -41,13 +44,30 @@ const ServiceCard = () => {
         </section>
 
         {/* Mobile/Tablet horizontal scroll */}
-        <section className="flex xl:hidden items-stretch gap-6  ">
+        <Swiper
+          spaceBetween={30}
+          centeredSlides={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          slidesPerGroup={1}
+          modules={[Autoplay]}
+          className="mySwiper xl:hidden"
+          breakpoints={{
+            0: { slidesPerView: 1, centeredSlides: true },
+            640: { slidesPerView: 2, centeredSlides: true },
+            1024: { slidesPerView: 0, centeredSlides: true },
+          }}
+        >
           {data.map((item, index) => (
-            <div className="min-w-[280px] max-w-[320px]" key={index}>
-              <Card title={item.title} des={item.des} />
-            </div>
+            <SwiperSlide key={index} className="flex justify-center">
+              <div className="min-w-[280px] max-w-[320px]">
+                <Card title={item.title} des={item.des} />
+              </div>
+            </SwiperSlide>
           ))}
-        </section>
+        </Swiper>
 
         {/* Explore More Button only for desktop */}
         <div className="hidden xl:block text-center">

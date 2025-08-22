@@ -7,12 +7,14 @@
 // import TalkingForm from "components/portfolio/TalkingForm";
 // import Team from "components/portfolio/Team";
 import Hero from "components/portfolio/Hero";
+import ServiceCard from "components/reuse/ServiceCard";
 import React from "react";
 
 const Home = () => {
   return (
     <div>
       <Hero />
+      <ServiceCard />
       {/* <Brand /> */}
       {/* <Goal /> */}
       {/* <ClientProject /> */}
