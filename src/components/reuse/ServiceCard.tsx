@@ -5,9 +5,18 @@ import CommonWrapper from "../shared/CommonWrapper";
 import { Button } from "../ui/button";
 import PrimaryButton from "./PrimaryButton";
 import { motion, AnimatePresence } from "framer-motion";
-import { Autoplay } from "swiper/modules";
+import {
+  Autoplay,
+  EffectCards,
+  EffectCoverflow,
+  EffectCube,
+  EffectFade,
+  Navigation,
+  Pagination,
+} from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+
 const ServiceCard = () => {
   const data = [
     { title: "Game Developer", des: "lrem10kjjjjfjakdfj" },
@@ -16,22 +25,21 @@ const ServiceCard = () => {
     { title: "UI/UX Designer", des: "lrem10kjjjjfjakdfj" },
     { title: "AI Engineer", des: "lrem10kjjjjfjakdfj" },
   ];
-
   const [showAll, setShowAll] = useState<boolean>(false);
   const visibleData = showAll ? data : data.slice(0, 3);
-
   return (
     <CommonWrapper>
       <div
         className={`space-y-14 py-[clamp(4rem,15vw,20rem)] ${
-          showAll && "space-y-5"
+          showAll ? "space-y-5" : ""
         }`}
       >
         {/* Desktop / XL Grid */}
-        <section className="hidden xl:grid grid-cols-3 gap-6">
-          {visibleData.map((item, index) => (
-            <AnimatePresence key={index}>
+        <AnimatePresence>
+          <section className="hidden xl:grid grid-cols-3 gap-6">
+            {visibleData.map((item, index) => (
               <motion.div
+                key={item.title}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 50 }}
@@ -39,35 +47,53 @@ const ServiceCard = () => {
               >
                 <Card title={item.title} des={item.des} />
               </motion.div>
-            </AnimatePresence>
-          ))}
-        </section>
+            ))}
+          </section>
+        </AnimatePresence>
 
         {/* Mobile/Tablet horizontal scroll */}
-        <Swiper
-          spaceBetween={30}
-          centeredSlides={true}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          slidesPerGroup={1}
-          modules={[Autoplay]}
-          className="mySwiper xl:hidden"
-          breakpoints={{
-            0: { slidesPerView: 1, centeredSlides: true },
-            640: { slidesPerView: 2, centeredSlides: true },
-            1024: { slidesPerView: 0, centeredSlides: true },
-          }}
-        >
-          {data.map((item, index) => (
-            <SwiperSlide key={index} className="flex justify-center">
-              <div className="min-w-[280px] max-w-[320px]">
-                <Card title={item.title} des={item.des} />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <div className="xl:hidden">
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={20}
+            slidesPerView={1}
+            autoplay={{
+              delay: 2500,
+            }}
+            speed={800}
+            loop={true}
+            breakpoints={{
+              0: {
+                slidesPerView: 1.3,
+                spaceBetween: 8,
+                centeredSlides: true,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+                centeredSlides: true,
+              },
+              768: {
+                slidesPerView: 2.5,
+                spaceBetween: 30,
+                centeredSlides: true,
+              },
+              1024: {
+                slidesPerView: 3.5,
+                spaceBetween: 40,
+                centeredSlides: true,
+              },
+            }}
+          >
+            {data.map((item) => (
+              <SwiperSlide key={item.title} className="flex justify-center">
+                <div className="w-full max-w-[320px]">
+                  <Card title={item.title} des={item.des} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
 
         {/* Explore More Button only for desktop */}
         <div className="hidden xl:block text-center">

@@ -5,7 +5,6 @@ import CommonWrapper from "../shared/CommonWrapper";
 import Gurranty from "../../assets/Logo/Gurranty";
 import PrimaryButton from "../reuse/PrimaryButton";
 import CommonTitle from "components/reuse/CommonTitle";
-import ServiceCard from "components/reuse/ServiceCard";
 
 const Hero = () => {
   return (
@@ -74,7 +73,7 @@ const Hero = () => {
 
         {/* Service Section with Background */}
         <section
-          className="w-full rotate-180 bg-no-repeat bg-center bg-contain mt-[20px] relative"
+          className="w-full rotate-180 bg-no-repeat bg-contain mt-[20px] "
           style={{
             backgroundImage: `url(${Background.src})`,
             minHeight: "clamp(392px, 80vh, 1200px)",
