@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 
 const CommonWrapper = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="max-w-[1200px] mx-auto w-[calc(100%-2rem)] overflow-x-hidden">
+    <div className="max-w-[1200px] mx-auto w-[calc(100%-2rem)] overflow-hidden">
       {children}
     </div>
   );
