@@ -59,7 +59,7 @@ const ServiceCard = () => {
             slidesPerView={1}
             autoplay={{
               delay: 2500,
-            }}
+            }}    
             speed={800}
             loop={true}
             breakpoints={{

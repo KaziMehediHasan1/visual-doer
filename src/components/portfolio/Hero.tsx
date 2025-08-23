@@ -4,11 +4,10 @@ import Star from "../../assets/Logo/Star";
 import CommonWrapper from "../shared/CommonWrapper";
 import Gurranty from "../../assets/Logo/Gurranty";
 import PrimaryButton from "../reuse/PrimaryButton";
-import CommonTitle from "components/reuse/CommonTitle";
 
 const Hero = () => {
   return (
-    <div>
+    <>
       {/* TEXT SECTION */}
       <section className="space-y-3 md:space-y-5 mt-[clamp(40px,5vw,80px)] w-full max-w-[85%] xl:max-w-[75%] mx-auto">
         <h1 className="text-[clamp(48px,calc(37.3333px+3.33333vw),80px)] leading-[clamp(1.2em,1.35em,1.4em)] font-semibold text-center bg-[linear-gradient(225deg,_#E6FAF7_0%,_#00D1AE_90.38%)] bg-clip-text text-transparent">
@@ -22,9 +21,12 @@ const Hero = () => {
 
       {/* REVIEW + BG SECTION */}
       <div
-        className="w-full bg-no-repeat bg-contain relative"
+        className="w-full bg-no-repeat bg-contain"
         style={{
-          minHeight: "clamp(392px, 80vh, 1200px)",
+          width: "100%",
+          margin:"0 auto",
+          height: "auto",
+          minHeight: "clamp(400px,80vw,1100px)",
           backgroundImage: `url(${Background.src})`,
         }}
       >
@@ -70,25 +72,8 @@ const Hero = () => {
             and functional experiences.
           </p>
         </CommonWrapper>
-
-        {/* Service Section with Background */}
-        <section
-          className="w-full rotate-180 bg-no-repeat bg-contain mt-[20px] "
-          style={{
-            backgroundImage: `url(${Background.src})`,
-            minHeight: "clamp(392px, 80vh, 1200px)",
-          }}
-        >
-          <div className="rotate-180 absolute inset-0">
-            <CommonTitle
-              style="xl:pt-[175px] sm:pt-[85px] pt-[55px] max-w-[350px] sm:max-w-[500px] xl:max-w-[600px]"
-              text="we must provide with your brand"
-            />
-            {/* <ServiceCard /> */}
-          </div>
-        </section>
       </div>
-    </div>
+    </>
   );
 };
 
