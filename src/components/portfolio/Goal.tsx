@@ -12,7 +12,7 @@ const Goal = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="relative w-full py-[clamp(3rem,6vw,8rem)]"
+      className="relative  w-full py-[clamp(3rem,6vw,8rem)]"
     >
       <CommonWrapper>
         {/* TEXT SECTION */}
