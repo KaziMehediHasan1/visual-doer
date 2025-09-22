@@ -7,9 +7,13 @@ import Link from "next/link";
 import BlogImage from "../../assets/images/image.png";
 import "swiper/css";
 import "swiper/css/pagination";
+import getData from "hooks/getData";
+import { useState } from "react";
 
 const BlogCard = ({ id = "sample-id" }: { id: string }) => {
   const blogItems = [1, 2, 3, 4];
+  const [loader,setLoader] = useState(false)
+  getData({url:"dashboard/ap", setLoader})
 
   return (
     <>

@@ -47,6 +47,11 @@ const items = [
     icon: CalendarDays,
   },
   {
+    title: "Google Review",
+    url: "/dashboard/google-review",
+    icon: CalendarDays,
+  },
+  {
     title: "Project",
     url: "/dashboard/projects",
     icon: CircleDollarSign,
